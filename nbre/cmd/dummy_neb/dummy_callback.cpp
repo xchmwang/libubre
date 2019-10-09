@@ -48,6 +48,9 @@ void callback_handler::handle_nr_sum(void *holder, const char *nr_sum) {
 void callback_handler::handle_dip_reward(void *holder, const char *dip_reward) {
   handle(m_dip_reward_handlers, holder, dip_reward);
 }
+void callback_handler::handle_experiment(void *holder, const char *ret) {
+  handle(m_experiment_handlers, holder, ret);
+}
 
 void nbre_version_callback(ipc_status_code isc, void *handler, uint32_t major,
                            uint32_t minor, uint32_t patch) {
@@ -120,3 +123,11 @@ void nbre_dip_reward_callback(ipc_status_code isc, void *holder,
   callback_handler::instance().handle_dip_reward(holder, dip_reward);
 }
 
+void nbre_experiment_callback(ipc_status_code isc, void *holder,
+                              const char *ret) {
+  if (isc != ipc_status_succ) {
+    LOG(ERROR) << "nbre_experiment_callback got failed ";
+    return;
+  }
+  callback_handler::instance().handle_experiment(holder, ret);
+}

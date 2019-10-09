@@ -61,10 +61,10 @@ void init_dummy_driver(dummy_driver &dd, const std::string &rpc_listen,
                        uint16_t rpc_port) {
   auto default_dummy = std::make_shared<random_dummy>(
       "default_random", 20, 10000_nas, 0.05, rpc_listen, rpc_port);
-  default_dummy->enable_auth_gen_with_ratio(1, 1);
-  default_dummy->enable_nr_ir_with_ratio(1, 20);
-  default_dummy->enable_dip_ir_with_ratio(1, 20);
-  default_dummy->enable_call_tx_with_ratio(1, 1);
+  // default_dummy->enable_auth_gen_with_ratio(1, 1);
+  // default_dummy->enable_nr_ir_with_ratio(1, 20);
+  // default_dummy->enable_dip_ir_with_ratio(1, 20);
+  // default_dummy->enable_call_tx_with_ratio(1, 1);
   dd.add_dummy(default_dummy);
 
   // auto stress = std::make_shared<stress_dummy>(
@@ -87,6 +87,7 @@ void init_and_start_nbre(const address_t &auth_admin_addr,
   set_recv_nbre_nr_result_by_height_callback(nbre_nr_result_by_height_callback);
   set_recv_nbre_nr_sum_callback(nbre_nr_sum_callback);
   set_recv_nbre_dip_reward_callback(nbre_dip_reward_callback);
+  set_recv_nbre_experiment_callback(nbre_experiment_callback);
 
   uint64_t nbre_start_height = 1;
   std::string auth_addr_str = auth_admin_addr.to_base58();

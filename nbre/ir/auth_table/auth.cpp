@@ -37,6 +37,8 @@ std::vector<row_t> entry_point_auth() {
   std::vector<row_t> auth_table = {
       std::make_tuple("nr", std::string(admin_addr.begin(), admin_addr.end()),
                       1ULL, 200000ULL),
+      std::make_tuple("exp", std::string(admin_addr.begin(), admin_addr.end()),
+                      1ULL, 200000ULL),
       std::make_tuple("dip", std::string(admin_addr.begin(), admin_addr.end()),
                       1ULL, 200000ULL)};
   return auth_table;

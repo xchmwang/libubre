@@ -41,6 +41,7 @@ po::variables_map get_variables_map(int argc, char *argv[]) {
     ("version", po::value<std::string>()->default_value("0.0.1"), "x.x.x")
     ("handle", po::value<std::string>(), "request handle")
     ("height", po::value<uint64_t>()->default_value(0), "request height")
+    ("msg", po::value<std::string>(), "experiment message")
     ("rpc-listen", po::value<std::string>()->default_value("127.0.0.1"), "nipc listen")
     ("rpc-port", po::value<uint16_t>()->default_value(0x1958), "nipc port")
     ("kill-nbre", "kill nbre immediatelly");
@@ -142,6 +143,15 @@ public:
     start_and_join();
   }
 
+  void send_experiment_req(uint64_t version, const std::string &msg) {
+    auto req = std::make_shared<nbre_experiment_req>();
+    req->set<p_holder>(reinterpret_cast<uint64_t>(this));
+    req->set<p_version>(version);
+    req->set<p_msg>(msg);
+    m_package = req;
+    start_and_join();
+  }
+
 protected:
   void start_and_join() {
 
@@ -199,6 +209,12 @@ protected:
           conn->close();
           exit(-1);
         });
+    hub.to_recv_pkg<nbre_experiment_ack>(
+        [&](std::shared_ptr<nbre_experiment_ack> ack) {
+          std::cout << "\t" << ack->get<p_msg>() << std::endl;
+          conn->close();
+          exit(-1);
+        });
     nn.add_pkg_hub(hub);
     conn = nn.add_tcp_client(m_rpc_listen, m_rpc_port);
 
@@ -218,7 +234,7 @@ int main(int argc, char *argv[]) {
 
   if (vm.count("submit")) {
     std::string type = vm["submit"].as<std::string>();
-    if (type != "nr" && type != "auth" && type != "dip") {
+    if (type != "nr" && type != "auth" && type != "dip" && type != "exp") {
       std::cout << "invalid type " << type << std::endl;
       exit(-1);
     }
@@ -236,7 +252,7 @@ int main(int argc, char *argv[]) {
   } else if (vm.count("query")) {
     std::string type = vm["query"].as<std::string>();
     if (type != "nr" && type != "nr-result" && type != "nr-sum" &&
-        type != "dip-reward") {
+        type != "dip-reward" && type != "exp") {
       std::cout << "invalid type " << type << std::endl;
       exit(-1);
     }
@@ -281,6 +297,13 @@ int main(int argc, char *argv[]) {
       v.from_string(version_str);
       cli_executor ce(rpc_listen, rpc_port);
       ce.send_dip_reward_req(height, v.data());
+    }
+    if (type == "exp") {
+      auto msg = vm["msg"].as<std::string>();
+      auto version_str = vm["version"].as<std::string>();
+      neb::version v;
+      v.from_string(version_str);
+      cli_executor ce(rpc_listen, rpc_port);
     }
   } else if (vm.count("kill-nbre")) {
     neb::util::magic_wand mw;

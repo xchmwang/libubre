@@ -96,6 +96,12 @@ int ipc_nbre_ir_transactions_append(void *holder, uint64_t height,
                                     const char *tx_bytes, int32_t tx_bytes_len);
 int ipc_nbre_ir_transactions_send(void *holder, uint64_t height);
 
+// interface experiment
+int ipc_nbre_experiment(void *holder, uint64_t version, char *msg);
+typedef void (*nbre_experiment_callback_t)(enum ipc_status_code isc,
+                                           void *holder, const char *ret);
+void set_recv_nbre_experiment_callback(nbre_experiment_callback_t func);
+
 typedef struct {
   const char *m_nbre_root_dir;
   const char *m_nbre_exe_name;

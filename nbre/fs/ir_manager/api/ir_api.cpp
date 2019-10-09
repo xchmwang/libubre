@@ -60,8 +60,8 @@ ir_api::get_ir_versions(const std::string &name, rocksdb_storage *rs) {
   try {
     ir_versions_bytes = rs->get(name);
   } catch (const std::exception &e) {
-    LOG(INFO) << "ir with name " << name << " versions empty, get " << name
-              << " versions failed " << e.what();
+    // LOG(INFO) << "ir with name " << name << " versions empty, get " << name
+    //<< " versions failed " << e.what();
     return ret;
   }
 

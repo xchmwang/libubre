@@ -311,3 +311,10 @@ int ipc_nbre_ir_transactions_send(void *holder, uint64_t height) {
                   p_ir_transactions>::bind(holder, _height, *_txs_ptr);
 }
 
+int ipc_nbre_experiment(void *holder, uint64_t version, char *msg) {
+  return ipc_call<nbre_experiment_req, p_holder, p_version, p_msg>::bind(
+      holder, version, msg);
+}
+void set_recv_nbre_experiment_callback(nbre_experiment_callback_t func) {
+  ipc_callback<nbre_experiment_ack, p_holder, p_msg>::bind(func, _2, _3);
+}

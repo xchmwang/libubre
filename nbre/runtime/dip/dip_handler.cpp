@@ -94,7 +94,7 @@ void dip_handler::start(neb::block_height_t height,
                         const dip_params_t *dip_params) {
   check_dip_params(height);
   if (!m_has_curr) {
-    LOG(INFO) << "dip params not init";
+    // LOG(INFO) << "dip params not init";
     return;
   }
 
@@ -371,12 +371,12 @@ void dip_handler::load_storage(
     size_t storage_max_size) {
   std::unique_lock<std::mutex> _l(m_mutex);
 
-  LOG(INFO) << "call func load_storage";
+  // LOG(INFO) << "call func load_storage";
   neb::bytes val_bytes;
   try {
     val_bytes = m_storage->get(key);
   } catch (const std::exception &e) {
-    LOG(INFO) << key << " empty " << e.what();
+    // LOG(INFO) << key << " empty " << e.what();
     return;
   }
 

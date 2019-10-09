@@ -118,7 +118,7 @@ void ir_manager_helper::load_auth_table(
     payload_bytes =
         rs->get(neb::configuration::instance().nbre_auth_table_name());
   } catch (const std::exception &e) {
-    LOG(INFO) << "auth table not deploy yet " << e.what();
+    // LOG(INFO) << "auth table not deploy yet " << e.what();
     return;
   }
 

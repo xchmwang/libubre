@@ -110,10 +110,10 @@ random_dummy::~random_dummy() {
 
 std::shared_ptr<generate_block> random_dummy::generate_LIB_block() {
 
-  handle_cli_pkgs();
-
   std::shared_ptr<generate_block> ret =
       std::make_shared<generate_block>(&m_all_accounts, m_current_height);
+
+  handle_cli_pkgs(ret.get());
 
   if (m_current_height == 0) {
     genesis_generator g(ret.get(), m_initial_account_num, m_initial_nas);
@@ -126,64 +126,6 @@ std::shared_ptr<generate_block> random_dummy::generate_LIB_block() {
         &m_all_accounts, ret.get(),
         m_account_increase_ratio * m_initial_account_num, tx_num);
     m_tx_gen->run();
-
-    if (std::abs(m_auth_ratio) > 1e-9 &&
-        std::rand() % 1000 < m_auth_ratio * 1000 &&
-        m_current_height % m_auth_interval == 0) {
-      m_auth_gen =
-          std::make_unique<auth_table_generator>(&m_all_accounts, ret.get());
-      address_t nr_admin_addr = m_auth_admin_addr;
-      address_t dip_admin_addr = m_auth_admin_addr;
-      m_nr_admin_addr = nr_admin_addr;
-      m_dip_admin_addr = dip_admin_addr;
-      m_auth_gen->set_auth_admin_addr(m_auth_admin_addr);
-      m_auth_gen->set_nr_admin_addr(nr_admin_addr);
-      m_auth_gen->set_dip_admin_addr(dip_admin_addr);
-      m_auth_gen->run();
-    }
-
-    if (std::abs(m_nr_ratio) > 1e-9 && std::rand() % 1000 < m_nr_ratio * 1000 &&
-        m_current_height % m_nr_interval == 0) {
-      if (m_nr_admin_addr.empty()) {
-        m_nr_admin_addr = m_auth_admin_addr;
-      }
-      m_nr_gen = std::make_unique<nr_ir_generator>(ret.get(), m_nr_admin_addr);
-      random_increase_version(m_nr_version);
-      m_nr_gen->m_major_version = m_nr_version.major_version();
-      m_nr_gen->m_minor_version = m_nr_version.minor_version();
-      m_nr_gen->m_patch_version = m_nr_version.patch_version();
-
-      m_nr_gen->run();
-    }
-
-    if (std::abs(m_dip_ratio) > 1e-9 &&
-        std::rand() % 1000 < m_dip_ratio * 1000 &&
-        m_current_height % m_dip_interval == 0) {
-      if (m_dip_admin_addr.empty()) {
-        m_dip_admin_addr = m_auth_admin_addr;
-      }
-      m_dip_gen =
-          std::make_unique<dip_ir_generator>(ret.get(), m_dip_admin_addr);
-      random_increase_version(m_dip_version);
-      m_dip_gen->m_major_version = m_dip_version.major_version();
-      m_dip_gen->m_minor_version = m_dip_version.minor_version();
-      m_dip_gen->m_patch_version = m_dip_version.patch_version();
-      m_dip_gen->m_nr_version = m_nr_version.data();
-
-      m_dip_gen->run();
-    }
-
-    if (std::abs(m_contract_ratio) > 1e-9 &&
-        std::rand() % 1000 < m_contract_ratio * 1000) {
-      m_contract_gen = std::make_unique<contract_generator>(ret.get(), 1);
-      m_contract_gen->run();
-    }
-    if (std::abs(m_call_ratio) > 1e-9 &&
-        std::rand() % 1000 < m_call_ratio * 1000) {
-      m_call_gen = std::make_unique<call_tx_generator>(
-          ret.get(), std::rand() % (m_all_accounts.size() / 5));
-      m_call_gen->run();
-    }
 
     m_cli_generator->m_auth_admin_addr = m_auth_admin_addr;
     m_cli_generator->m_nr_admin_addr = m_nr_admin_addr;
@@ -278,14 +220,22 @@ address_t random_dummy::get_auth_admin_addr() {
   return m_auth_admin_addr;
 }
 
-void random_dummy::handle_cli_pkgs() {
+void random_dummy::handle_cli_pkgs(generate_block *block) {
   while (!m_pkgs.empty()) {
     auto ret = m_pkgs.try_pop_front();
     if (!ret.first)
       continue;
     auto pkg = ret.second;
     if (pkg->type_id() == cli_submit_ir_pkg) {
-      m_cli_generator->append_pkg(pkg);
+      auto *req = (cli_submit_ir_t *)pkg.get();
+      auto payload = req->get<p_payload>();
+      auto payload_bytes = neb::bytes::from_base64(payload);
+      std::initializer_list<neb::byte_t> admin_addr = {
+          0x19, 0x57, 0x73, 0x3f, 0x7b, 0x52, 0xad, 0x3a, 0x99,
+          0xc5, 0x56, 0x84, 0xb3, 0x9f, 0x4c, 0x31, 0xe0, 0x5c,
+          0x35, 0x0c, 0x5d, 0xaa, 0xb0, 0x7e, 0x87, 0x5b};
+      block->add_protocol_transaction(neb::bytes(admin_addr), payload_bytes);
+      // m_cli_generator->append_pkg(pkg);
     } else if (pkg->type_id() == nbre_nr_handle_req_pkg) {
       nbre_nr_handle_req *req = (nbre_nr_handle_req *)pkg.get();
 

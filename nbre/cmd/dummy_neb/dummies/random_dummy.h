@@ -43,7 +43,7 @@ public:
   virtual address_t get_auth_admin_addr();
 
 protected:
-  void handle_cli_pkgs();
+  void handle_cli_pkgs(generate_block *block);
 
 protected:
   all_accounts m_all_accounts;

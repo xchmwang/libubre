@@ -390,6 +390,38 @@ void client_driver::add_handlers() {
                      << " with what: " << e.what();
         }
       });
+
+  m_client->add_handler<nbre_experiment_req>(
+      [this](std::shared_ptr<nbre_experiment_req> req) {
+        try {
+
+          std::string name = "exp";
+          uint64_t version = req->get<p_version>();
+          auto *rs = neb::fs::storage_holder::instance().nbre_db_ptr();
+          auto ir_ret = neb::fs::ir_api::get_ir(name, version, rs);
+          if (!ir_ret.first) {
+            throw;
+          }
+
+          auto &jd = jit_driver::instance();
+          std::stringstream ss;
+          ss << name << version;
+          std::string ir_key = ss.str();
+          std::string func_name = "entry_point_exp";
+          auto nbre_ir = *ir_ret.second;
+          std::vector<nbre::NBREIR> irs;
+          irs.push_back(nbre_ir);
+          auto msg = req->get<p_msg>();
+
+          auto ret = jd.run<std::string>(ir_key, irs, func_name, msg);
+          auto ack = new_ack_pkg<nbre_experiment_ack>(req);
+          ack->set<p_msg>(ret);
+          m_ipc_conn->send(ack);
+        } catch (const std::exception &e) {
+          LOG(ERROR) << "got exception " << typeid(e).name()
+                     << " with what: " << e.what();
+        }
+      });
 }
 } // namespace core
 } // namespace neb

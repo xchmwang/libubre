@@ -77,6 +77,13 @@ public:
   }
   void handle_dip_reward(void *holder, const char *dip_reward);
 
+  template <typename Func>
+  void add_experiment_handler(uint64_t holder, Func &&f) {
+    std::unique_lock<std::mutex> _l(m_mutex);
+    m_experiment_handlers.insert(std::make_pair(holder, f));
+  }
+  void handle_experiment(void *holder, const char *ret);
+
 protected:
   template <typename Handlers, typename... ARGS>
   void handle(Handlers &hs, void *holder, ARGS... args) {
@@ -118,6 +125,9 @@ protected:
 
   std::unordered_map<uint64_t, std::function<void(uint64_t, const char *)>>
       m_dip_reward_handlers;
+
+  std::unordered_map<uint64_t, std::function<void(uint64_t, const char *)>>
+      m_experiment_handlers;
 };
 
 void nbre_version_callback(ipc_status_code isc, void *handler, uint32_t major,
@@ -142,3 +152,6 @@ void nbre_nr_sum_callback(ipc_status_code isc, void *holder,
 
 void nbre_dip_reward_callback(ipc_status_code isc, void *holder,
                               const char *dip_reward);
+
+void nbre_experiment_callback(ipc_status_code isc, void *holder,
+                              const char *ret);

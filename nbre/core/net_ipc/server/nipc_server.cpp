@@ -120,10 +120,10 @@ bool nipc_server::start() {
               });
 
       // We need start the client here
-      m_client_watcher =
-          std::unique_ptr<ipc_client_watcher>(new ipc_client_watcher(
-              neb::configuration::instance().nbre_exe_name()));
-      m_client_watcher->start();
+      // m_client_watcher =
+      // std::unique_ptr<ipc_client_watcher>(new ipc_client_watcher(
+      // neb::configuration::instance().nbre_exe_name()));
+      // m_client_watcher->start();
 
       m_heart_beat_watcher =
           std::make_unique<util::timer_loop>(&m_server->ioservice());
@@ -134,7 +134,7 @@ bool nipc_server::start() {
             std::chrono::duration_cast<std::chrono::seconds>(duration).count();
         if (count > 60) {
           LOG(INFO) << "lost heart beat, to kill client";
-          m_client_watcher->kill_client();
+          // m_client_watcher->kill_client();
         }
       });
       while (true) {
@@ -211,7 +211,7 @@ void nipc_server::add_all_callbacks() {
   });
 
   m_pkg_hub->to_recv_pkg<heart_beat_t>([this](std::shared_ptr<heart_beat_t> p) {
-    LOG(INFO) << "got heart beat";
+    // LOG(INFO) << "got heart beat";
     m_last_heart_beat_time = std::chrono::steady_clock::now();
     m_conn->send(p);
   });
