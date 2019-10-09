@@ -304,6 +304,7 @@ int main(int argc, char *argv[]) {
       neb::version v;
       v.from_string(version_str);
       cli_executor ce(rpc_listen, rpc_port);
+      ce.send_experiment_req(v.data(), msg);
     }
   } else if (vm.count("kill-nbre")) {
     neb::util::magic_wand mw;

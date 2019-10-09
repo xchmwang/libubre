@@ -88,6 +88,9 @@ random_dummy::random_dummy(const std::string &name, int initial_account_num,
           m_pkgs.push_back(req);
         });
 
+    hub.to_recv_pkg<nbre_experiment_req>([this](
+        std::shared_ptr<nbre_experiment_req> req) { m_pkgs.push_back(req); });
+
     nn.get_event_handler()
         ->listen<::ff::net::event::more::tcp_server_accept_connection>(
             [this](::ff::net::tcp_connection_base_ptr conn) { m_conn = conn; });
@@ -306,6 +309,19 @@ void random_dummy::handle_cli_pkgs(generate_block *block) {
           });
       ipc_nbre_dip_reward(reinterpret_cast<void *>(req->get<p_holder>()),
                           req->get<p_height>(), req->get<p_version>());
+    } else if (pkg->type_id() == nbre_experiment_req_pkg) {
+      nbre_experiment_req *req = (nbre_experiment_req *)pkg.get();
+      callback_handler::instance().add_experiment_handler(
+          req->get<p_holder>(), [this](uint64_t holder, const char *ret) {
+            std::cout << "dummy neb recv nbre experiment ack" << std::endl;
+            std::shared_ptr<nbre_experiment_ack> ack =
+                std::make_shared<nbre_experiment_ack>();
+            ack->set<p_holder>(holder);
+            ack->set<p_msg>(std::string(ret));
+            m_conn->send(ack);
+          });
+      ipc_nbre_experiment(reinterpret_cast<void *>(req->get<p_holder>()),
+                          req->get<p_version>(), req->get<p_msg>().c_str());
     } else {
       LOG(INFO) << "pkg type id " << pkg->type_id() << " not found";
     }

@@ -311,7 +311,7 @@ int ipc_nbre_ir_transactions_send(void *holder, uint64_t height) {
                   p_ir_transactions>::bind(holder, _height, *_txs_ptr);
 }
 
-int ipc_nbre_experiment(void *holder, uint64_t version, char *msg) {
+int ipc_nbre_experiment(void *holder, uint64_t version, const char *msg) {
   return ipc_call<nbre_experiment_req, p_holder, p_version, p_msg>::bind(
       holder, version, msg);
 }
