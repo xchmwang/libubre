@@ -244,6 +244,7 @@ int main(int argc, char *argv[]) {
     }
     std::string fp = vm["payload"].as<std::string>();
 
+    LOG(INFO) << "submit " << type;
     cli_executor ce(rpc_listen, rpc_port);
     ce.send_submit_ir(type, fp);
   } else if (vm.count("brief")) {
@@ -256,6 +257,7 @@ int main(int argc, char *argv[]) {
       std::cout << "invalid type " << type << std::endl;
       exit(-1);
     }
+    LOG(INFO) << "query for " << type;
     if (type == "nr") {
       if (!vm.count("start-block") || !vm.count("end-block") ||
           !vm.count("version")) {

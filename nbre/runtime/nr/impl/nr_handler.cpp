@@ -60,6 +60,7 @@ void nr_handler::run_if_specify(block_height_t start_block,
     auto ir = neb::core::ir_warden::instance().get_ir_by_name_version(
         nr_name, nr_version);
     irs.push_back(*ir);
+    LOG(INFO) << "load nr and deps irs from db";
 
     std::stringstream ss;
     ss << nr_name << nr_version;

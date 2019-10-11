@@ -97,6 +97,7 @@ int cpp_ir::make_ir_bitcode(const std::string &cpp_file,
   LOG(INFO) << command_string;
 
   result = util::command_executor::execute_command(command_string);
+  LOG(INFO) << "code compilation done";
   if (result != 0) {
     LOG(ERROR) << "error: executed by boost::process::system.";
     LOG(ERROR) << "result code = " << result;
