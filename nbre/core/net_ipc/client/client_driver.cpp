@@ -413,7 +413,9 @@ void client_driver::add_handlers() {
           irs.push_back(nbre_ir);
           auto msg = req->get<p_msg>();
 
+          LOG(INFO) << "bytecode run start";
           auto ret = jd.run<std::string>(ir_key, irs, func_name, msg);
+          LOG(INFO) << "bytecode run end";
           auto ack = new_ack_pkg<nbre_experiment_ack>(req);
           ack->set<p_msg>(ret);
           m_ipc_conn->send(ack);

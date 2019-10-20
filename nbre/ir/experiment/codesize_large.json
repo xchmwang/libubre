@@ -1,0 +1,22 @@
+{
+  "name": "exp",
+  "version_major": 0,
+  "version_minor": 3,
+  "version_patch": 3,
+  "depends": [
+  ],
+  "available_height": 10,
+  "cpp_files": [
+    "codesize_large.cpp"
+  ],
+  "include_header_files":[
+    "../../lib/include"
+  ],
+  "link_path":[
+    "../../lib"
+  ],
+  "link_files":[
+  ],
+  "flags": [
+  ]
+}
