@@ -7,7 +7,7 @@
   ],
   "available_height": 2,
   "cpp_files": [
-    "decycle.cpp"
+    "address.cpp"
   ],
   "include_header_files":[
     "../../lib/include/"

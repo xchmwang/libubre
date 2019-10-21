@@ -18,10 +18,14 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-#include "runtime/version.h"
+#include "common/version.h"
+#include "common/common.h"
 #include <string>
 
 std::string entry_point_exp(const std::string &msg) {
-  neb::rt::get_version();
-  return msg;
+  neb::version v;
+  v.major_version() = 0;
+  v.minor_version() = 1;
+  v.patch_version() = 1;
+  return msg + std::to_string(v.data());
 }
