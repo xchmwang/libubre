@@ -179,7 +179,7 @@ int main(int argc, char *argv[]) {
       nbre_ipc_shutdown();
     });
 
-    std::this_thread::sleep_for(std::chrono::seconds(interval));
+    // std::this_thread::sleep_for(std::chrono::seconds(interval));
 
     std::string nipc_listen = vm["nipc-listen"].as<std::string>();
     uint16_t nipc_port = vm["nipc-port"].as<uint16_t>();

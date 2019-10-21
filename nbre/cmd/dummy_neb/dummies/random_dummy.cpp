@@ -218,7 +218,12 @@ address_t random_dummy::get_auth_admin_addr() {
   if (m_current_height == 0)
     generate_LIB_block();
   if (m_auth_admin_addr.empty()) {
-    m_auth_admin_addr = m_all_accounts.random_user_addr();
+    // m_auth_admin_addr = m_all_accounts.random_user_addr();
+    std::initializer_list<neb::byte_t> admin_addr = {
+        0x19, 0x57, 0x73, 0x3f, 0x7b, 0x52, 0xad, 0x3a, 0x99,
+        0xc5, 0x56, 0x84, 0xb3, 0x9f, 0x4c, 0x31, 0xe0, 0x5c,
+        0x35, 0x0c, 0x5d, 0xaa, 0xb0, 0x7e, 0x87, 0x5b};
+    m_auth_admin_addr = neb::bytes(admin_addr);
   }
   return m_auth_admin_addr;
 }
