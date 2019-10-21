@@ -75,9 +75,13 @@ jit_driver::jit_driver() {
   llvm::sys::Process::PreventCoreFiles();
   std::string errMsg;
   llvm::sys::DynamicLibrary::LoadLibraryPermanently(nullptr, &errMsg);
+  m_mangler = std::make_unique<jit::jit_mangled_entry_point>();
 }
 
-jit_driver::~jit_driver() { llvm::llvm_shutdown(); }
+jit_driver::~jit_driver() {
+  m_mangler.reset();
+  llvm::llvm_shutdown();
+}
 
 std::string jit_driver::get_mangled_entry_point(const std::string &name) {
   return m_mangler->get_mangled_entry_name(name);
@@ -88,6 +92,7 @@ jit_driver::make_context(const std::vector<nbre::NBREIR> &irs,
                          const std::string &func_name) {
   std::unique_ptr<jit_context> ret = std::make_unique<jit_context>();
 
+  LOG(INFO) << "get mangled entry point: " << func_name;
   std::string mangling_name = get_mangled_entry_point(func_name);
   std::vector<std::unique_ptr<llvm::Module>> modules;
   for (const auto &ir : irs) {

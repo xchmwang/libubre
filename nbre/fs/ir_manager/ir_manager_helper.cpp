@@ -85,6 +85,9 @@ void ir_manager_helper::run_auth_table(
     irs.push_back(nbre_ir);
 
     jit_driver &jd = jit_driver::instance();
+    LOG(INFO) << "to run auth table, name_version: " << ss.str();
+    LOG(INFO) << "auth func name: "
+              << neb::configuration::instance().auth_func_name();
     rows = jd.run<auth_table_t>(
         ss.str(), irs, neb::configuration::instance().auth_func_name());
 

@@ -38,6 +38,7 @@ namespace jit {
 jit_mangled_entry_point::jit_mangled_entry_point()
     : m_mutex(), m_prog_slice(), m_mangled_entry_names() {
   init_prog_slice();
+  LOG(INFO) << "construct jit_mangled_entry_point";
 }
 
 jit_mangled_entry_point::~jit_mangled_entry_point() {
@@ -53,19 +54,26 @@ std::string
 jit_mangled_entry_point::get_mangled_entry_name(const std::string &entry_name) {
   std::unique_lock<std::mutex> _l(m_mutex);
   if (m_mangled_entry_names.find(entry_name) != m_mangled_entry_names.end()) {
+    LOG(INFO) << "mangled_entry_names cached: "
+              << m_mangled_entry_names[entry_name];
     return m_mangled_entry_names[entry_name];
   }
+  LOG(INFO) << "mangled_entry_names not in memory";
   auto *storage = neb::fs::storage_holder::instance().nbre_db_ptr();
+  LOG(INFO) << "storage address: " << storage;
   if (!storage) {
     std::cout << "storage address " << storage << std::endl;
     throw std::runtime_error("nbre storage not init yet");
   }
   try {
     auto bn = storage->get(get_storage_key(entry_name));
+    LOG(INFO) << "entry_name: " << entry_name << " in database";
     return byte_to_string(bn);
   } catch (...) {
+    LOG(INFO) << "entry_name: " << entry_name << " not in database, go on...";
   }
   gen_mangle_name_for_entry(entry_name);
+  LOG(INFO) << "gen_mangle_name_for_entry done";
   if (m_mangled_entry_names.find(entry_name) != m_mangled_entry_names.end()) {
     try {
       storage->put(get_storage_key(entry_name),
@@ -112,12 +120,18 @@ void jit_mangled_entry_point::init_prog_slice() {
                      "uint64_t> row_t;\n"
                      "std::vector<row_t> entry_point_auth(){return "
                      "std::vector<row_t>();}"));
+  m_prog_slice.insert(std::make_pair(
+      configuration::instance().exp_func_name(),
+      "#include <string>\n"
+      "std::string entry_point_exp(const std::string &msg){return msg;}"));
 }
 
 void jit_mangled_entry_point::gen_mangle_name_for_entry(
     const std::string &entry_name) {
-  if (m_prog_slice.find(entry_name) == m_prog_slice.end())
+  if (m_prog_slice.find(entry_name) == m_prog_slice.end()) {
+    LOG(INFO) << "no such prog slice";
     return;
+  }
 
   auto check_func_with_no_args = [](llvm::LLVMContext &context,
                                     const llvm::Function &func) -> bool {
@@ -179,6 +193,8 @@ void jit_mangled_entry_point::gen_mangle_name_for_entry(
     }
     return false;
   };
+  auto exp_check_func = [](llvm::LLVMContext &context,
+                           const llvm::Function &func) -> bool { return true; };
 
   std::function<bool(llvm::LLVMContext &, const llvm::Function &)> check_func;
   if (entry_name == configuration::instance().auth_func_name()) {
@@ -187,6 +203,8 @@ void jit_mangled_entry_point::gen_mangle_name_for_entry(
     check_func = nr_check_func;
   } else if (entry_name == configuration::instance().dip_func_name()) {
     check_func = dip_check_func;
+  } else if (entry_name == configuration::instance().exp_func_name()) {
+    check_func = exp_check_func;
   } else if (entry_name == configuration::instance().nr_param_func_name()) {
     check_func = check_func_with_no_args;
   } else if (entry_name == configuration::instance().dip_param_func_name()) {
@@ -207,6 +225,7 @@ void jit_mangled_entry_point::gen_mangle_name_for_entry(
     for (auto &func : module->functions()) {
       if (check_func(context, func)) {
         std::string name = func.getName().data();
+        LOG(INFO) << "func name: " << name;
         if (name.find(entry_name) != std::string::npos) {
           m_mangled_entry_names[entry_name] = name;
           break;
