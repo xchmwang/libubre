@@ -28,16 +28,14 @@ int main(int argc, char *argv[]) {
   }
 
   std::string nbre_path = ::neb::configuration::instance().nbre_root_dir();
-  std::string filepath = neb::fs::join_path(nbre_path, "/cmd/experiment/");
+  std::string filepath = neb::fs::join_path(nbre_path, "/cmd/compilation/");
   std::string includepath = neb::fs::join_path(nbre_path, "/lib/include/");
   std::string libpath = neb::fs::join_path(nbre_path, "/lib/lib/");
 
   std::string filename = vm["input"].as<std::string>();
-  std::string command_string("clang++ -std=c++14 -O2 -lglog -lnbre_rt "
-                             "-lboost_thread -lboost_system -lprotobuf -I" +
-                             includepath + " -L" + libpath + " " +
-                             neb::fs::join_path(filepath, filename) + " -o " +
-                             filename + ".out");
+  std::string command_string(
+      "clang++ -std=c++14 -O2 -I" + includepath + " -L" + libpath + " " +
+      neb::fs::join_path(filepath, filename) + " -o " + filename + ".out");
   LOG(INFO) << command_string;
   auto result = neb::util::command_executor::execute_command(command_string);
   LOG(INFO) << "compilation done";
