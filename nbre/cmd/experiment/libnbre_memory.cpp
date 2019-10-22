@@ -76,6 +76,6 @@ std::string entry_point_exp(const std::string &msg) {
 
 int main() {
   auto ret = entry_point_exp("memory");
-  std::cout << ret << std::endl;
+  // std::cout << ret << std::endl;
   return 0;
 }
