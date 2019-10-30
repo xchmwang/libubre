@@ -7,11 +7,34 @@
 
 namespace po = boost::program_options;
 
+std::vector<std::string> split_by_comma(const std::string &str, char comma) {
+  std::vector<std::string> v;
+  std::stringstream ss(str);
+  std::string token;
+
+  while (getline(ss, token, comma)) {
+    v.push_back(token);
+  }
+  return v;
+}
+
+std::string dep_files_path(const std::string &dir,
+                           const std::string &dep_files_name) {
+  auto v = split_by_comma(dep_files_name, ',');
+  std::string ret;
+  for (auto &dep : v) {
+    ret += neb::fs::join_path(dir, dep);
+    ret += ' ';
+  }
+  return ret;
+}
+
 int main(int argc, char *argv[]) {
 
   po::options_description desc("Binary compilation time");
   desc.add_options()("help", "show help message")(
-      "input", po::value<std::string>(), "input file to compile");
+      "input", po::value<std::string>(), "input file to compile")(
+      "deps", po::value<std::string>(), "dependencies");
 
   po::variables_map vm;
   po::store(po::parse_command_line(argc, argv, desc), vm);
@@ -33,11 +56,17 @@ int main(int argc, char *argv[]) {
   std::string libpath = neb::fs::join_path(nbre_path, "/lib/lib/");
 
   std::string filename = vm["input"].as<std::string>();
+  std::string deps;
+  if (vm.count("deps")) {
+    deps = vm["deps"].as<std::string>();
+    std::string deppath = neb::fs::join_path(nbre_path, "/ir/experiment/");
+    deps = dep_files_path(deppath, deps);
+  }
   std::string command_string("clang++ -std=c++14 -O2 -lglog -lnbre_rt "
                              "-lboost_thread -lboost_system -lprotobuf -I" +
                              includepath + " -L" + libpath + " " +
-                             neb::fs::join_path(filepath, filename) + " -o " +
-                             filename + ".out");
+                             neb::fs::join_path(filepath, filename) + " " +
+                             deps + " -o " + filename + ".out");
   LOG(INFO) << command_string;
   auto result = neb::util::command_executor::execute_command(command_string);
   LOG(INFO) << "compilation done";
