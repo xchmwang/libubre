@@ -1,19 +1,13 @@
 {
   "name": "exp",
   "version_major": 1,
-  "version_minor": 1,
+  "version_minor": 7,
   "version_patch": 0,
   "depends": [
-    {
-      "name": "nr",
-      "version_major": 1,
-      "version_minor": 0,
-      "version_patch": 0
-    }
   ],
   "available_height": 2,
   "cpp_files": [
-    "version.cpp"
+    "dip.cpp"
   ],
   "include_header_files":[
     "../../lib/include/"

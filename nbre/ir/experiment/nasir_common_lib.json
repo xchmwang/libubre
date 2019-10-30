@@ -1,22 +1,17 @@
 {
-  "name": "exp",
+
+  "name": "nr",
   "version_major": 1,
-  "version_minor": 1,
+  "version_minor": 0,
   "version_patch": 0,
   "depends": [
-    {
-      "name": "nr",
-      "version_major": 1,
-      "version_minor": 0,
-      "version_patch": 0
-    }
   ],
   "available_height": 2,
   "cpp_files": [
-    "version.cpp"
+    "common_lib.cpp"
   ],
   "include_header_files":[
-    "../../lib/include/"
+    "../../lib/include"
   ],
   "link_path":[
     "../../lib"
@@ -25,4 +20,5 @@
   ],
   "flags": [
   ]
+
 }
