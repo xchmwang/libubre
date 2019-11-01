@@ -88,6 +88,7 @@ void init_and_start_nbre(const address_t &auth_admin_addr,
   set_recv_nbre_nr_sum_callback(nbre_nr_sum_callback);
   set_recv_nbre_dip_reward_callback(nbre_dip_reward_callback);
   set_recv_nbre_experiment_callback(nbre_experiment_callback);
+  set_recv_nbre_lib_callback(nbre_lib_callback);
 
   uint64_t nbre_start_height = 1;
   std::string auth_addr_str = auth_admin_addr.to_base58();

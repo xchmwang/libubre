@@ -5,10 +5,10 @@
   "version_patch": 0,
   "depends": [
     {
-      "name": "nr",
-      "version_major": 1,
+      "name": "lib",
+      "version_major": 0,
       "version_minor": 0,
-      "version_patch": 0
+      "version_patch": 1
     }
   ],
   "available_height": 2,

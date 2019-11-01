@@ -151,6 +151,14 @@ public:
     m_package = req;
     start_and_join();
   }
+  void send_lib_req(uint64_t version, const std::string &msg) {
+    auto req = std::make_shared<nbre_lib_req>();
+    req->set<p_holder>(reinterpret_cast<uint64_t>(this));
+    req->set<p_version>(version);
+    req->set<p_msg>(msg);
+    m_package = req;
+    start_and_join();
+  }
 
 protected:
   void start_and_join() {
@@ -215,6 +223,11 @@ protected:
           conn->close();
           exit(-1);
         });
+    hub.to_recv_pkg<nbre_lib_ack>([&](std::shared_ptr<nbre_lib_ack> ack) {
+      std::cout << "\t" << ack->get<p_status>() << std::endl;
+      conn->close();
+      exit(-1);
+    });
     nn.add_pkg_hub(hub);
     conn = nn.add_tcp_client(m_rpc_listen, m_rpc_port);
 
@@ -234,7 +247,8 @@ int main(int argc, char *argv[]) {
 
   if (vm.count("submit")) {
     std::string type = vm["submit"].as<std::string>();
-    if (type != "nr" && type != "auth" && type != "dip" && type != "exp") {
+    if (type != "nr" && type != "auth" && type != "dip" && type != "exp" &&
+        type != "lib") {
       std::cout << "invalid type " << type << std::endl;
       exit(-1);
     }
@@ -253,7 +267,7 @@ int main(int argc, char *argv[]) {
   } else if (vm.count("query")) {
     std::string type = vm["query"].as<std::string>();
     if (type != "nr" && type != "nr-result" && type != "nr-sum" &&
-        type != "dip-reward" && type != "exp") {
+        type != "dip-reward" && type != "exp" && type != "lib") {
       std::cout << "invalid type " << type << std::endl;
       exit(-1);
     }
@@ -307,6 +321,14 @@ int main(int argc, char *argv[]) {
       v.from_string(version_str);
       cli_executor ce(rpc_listen, rpc_port);
       ce.send_experiment_req(v.data(), msg);
+    }
+    if (type == "lib") {
+      auto msg = vm["msg"].as<std::string>();
+      auto version_str = vm["version"].as<std::string>();
+      neb::version v;
+      v.from_string(version_str);
+      cli_executor ce(rpc_listen, rpc_port);
+      ce.send_lib_req(v.data(), msg);
     }
   } else if (vm.count("kill-nbre")) {
     neb::util::magic_wand mw;

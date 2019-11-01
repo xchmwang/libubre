@@ -124,6 +124,9 @@ void jit_mangled_entry_point::init_prog_slice() {
       configuration::instance().exp_func_name(),
       "#include <string>\n"
       "std::string entry_point_exp(const std::string &msg){return msg;}"));
+  m_prog_slice.insert(
+      std::make_pair(configuration::instance().lib_func_name(),
+                     "int entry_point_lib(const char *msg){return 0;}"));
 }
 
 void jit_mangled_entry_point::gen_mangle_name_for_entry(
@@ -195,6 +198,8 @@ void jit_mangled_entry_point::gen_mangle_name_for_entry(
   };
   auto exp_check_func = [](llvm::LLVMContext &context,
                            const llvm::Function &func) -> bool { return true; };
+  auto lib_check_func = [](llvm::LLVMContext &context,
+                           const llvm::Function &func) -> bool { return true; };
 
   std::function<bool(llvm::LLVMContext &, const llvm::Function &)> check_func;
   if (entry_name == configuration::instance().auth_func_name()) {
@@ -205,6 +210,8 @@ void jit_mangled_entry_point::gen_mangle_name_for_entry(
     check_func = dip_check_func;
   } else if (entry_name == configuration::instance().exp_func_name()) {
     check_func = exp_check_func;
+  } else if (entry_name == configuration::instance().lib_func_name()) {
+    check_func = lib_check_func;
   } else if (entry_name == configuration::instance().nr_param_func_name()) {
     check_func = check_func_with_no_args;
   } else if (entry_name == configuration::instance().dip_param_func_name()) {

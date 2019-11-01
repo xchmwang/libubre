@@ -283,12 +283,6 @@ dip_ret_type entry_point_dip_impl(compatible_uint64_t start_block,
                                   const nr_ret_type &nr_ret, dip_float_t alpha,
                                   dip_float_t beta) {
 
-  auto nbre_path = neb::configuration::instance().nbre_root_dir();
-  auto bc_path =
-      neb::fs::join_path(nbre_path, "dummy_db/dummy_default_random_.db");
-  neb::fs::bc_storage_session::instance().init(
-      bc_path, neb::fs::storage_open_for_readonly);
-
   std::unique_ptr<neb::fs::blockchain_api_base> pba =
       std::unique_ptr<neb::fs::blockchain_api_base>(
           new neb::fs::blockchain_api_test());
@@ -322,7 +316,6 @@ std::string entry_point_exp(const std::string &msg) {
   dip_float_t beta = 1;
   auto nr_ret = entry_point_nr(2, 3);
   entry_point_dip_impl(2, 3, 1, 3, nr_ret, alpha, beta);
-  neb::fs::bc_storage_session::instance().release();
   return msg;
 }
 

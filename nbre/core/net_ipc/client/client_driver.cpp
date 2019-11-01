@@ -398,6 +398,46 @@ void client_driver::add_handlers() {
           std::string name = "exp";
           uint64_t version = req->get<p_version>();
           auto *rs = neb::fs::storage_holder::instance().nbre_db_ptr();
+          std::stringstream ss;
+          ss << name << version;
+          std::string ir_key = ss.str();
+          std::string func_name =
+              neb::configuration::instance().exp_func_name();
+
+          std::vector<std::pair<std::string, neb::version_t>> name_v_list;
+          neb::fs::ir_api::get_ir_depends(name, version, rs, name_v_list);
+          std::vector<nbre::NBREIR> irs;
+          for (auto &ele : name_v_list) {
+            auto name = ele.first;
+            auto version = ele.second;
+            auto ret = neb::fs::ir_api::get_ir(name, version, rs);
+            if (ret.first) {
+              irs.push_back(*ret.second);
+            }
+          }
+          std::cout << "irs size: " << irs.size() << std::endl;
+          auto &jd = jit_driver::instance();
+          auto msg = req->get<p_msg>();
+
+          LOG(INFO) << "bytecode run start";
+          auto ret = jd.run<std::string>(ir_key, irs, func_name, msg);
+          LOG(INFO) << "bytecode run end";
+          auto ack = new_ack_pkg<nbre_experiment_ack>(req);
+          ack->set<p_msg>(ret);
+          m_ipc_conn->send(ack);
+        } catch (const std::exception &e) {
+          LOG(ERROR) << "got exception " << typeid(e).name()
+                     << " with what: " << e.what();
+        }
+      });
+
+  m_client->add_handler<nbre_lib_req>(
+      [this](std::shared_ptr<nbre_lib_req> req) {
+        try {
+
+          std::string name = "lib";
+          uint64_t version = req->get<p_version>();
+          auto *rs = neb::fs::storage_holder::instance().nbre_db_ptr();
           auto ir_ret = neb::fs::ir_api::get_ir(name, version, rs);
           if (!ir_ret.first) {
             throw;
@@ -407,17 +447,16 @@ void client_driver::add_handlers() {
           std::stringstream ss;
           ss << name << version;
           std::string ir_key = ss.str();
-          std::string func_name = "entry_point_exp";
+          std::string func_name =
+              neb::configuration::instance().lib_func_name();
           auto nbre_ir = *ir_ret.second;
           std::vector<nbre::NBREIR> irs;
           irs.push_back(nbre_ir);
           auto msg = req->get<p_msg>();
 
-          LOG(INFO) << "bytecode run start";
-          auto ret = jd.run<std::string>(ir_key, irs, func_name, msg);
-          LOG(INFO) << "bytecode run end";
-          auto ack = new_ack_pkg<nbre_experiment_ack>(req);
-          ack->set<p_msg>(ret);
+          auto ret = jd.run<int32_t>(ir_key, irs, func_name, msg);
+          auto ack = new_ack_pkg<nbre_lib_ack>(req);
+          ack->set<p_status>(ret);
           m_ipc_conn->send(ack);
         } catch (const std::exception &e) {
           LOG(ERROR) << "got exception " << typeid(e).name()

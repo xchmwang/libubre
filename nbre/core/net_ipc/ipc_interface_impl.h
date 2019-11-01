@@ -87,4 +87,9 @@ define_ipc_param(std::string, p_msg)
 define_ipc_pkg(nbre_experiment_req, p_holder, p_version, p_msg)
 define_ipc_pkg(nbre_experiment_ack, p_holder, p_msg)
 define_ipc_api(nbre_experiment_req, nbre_experiment_ack)
+
+define_ipc_param(int32_t, p_status)
+define_ipc_pkg(nbre_lib_req, p_holder, p_version, p_msg)
+define_ipc_pkg(nbre_lib_ack, p_holder, p_status)
+define_ipc_api(nbre_lib_req, nbre_lib_ack)
     // clang-format on

@@ -318,3 +318,12 @@ int ipc_nbre_experiment(void *holder, uint64_t version, const char *msg) {
 void set_recv_nbre_experiment_callback(nbre_experiment_callback_t func) {
   ipc_callback<nbre_experiment_ack, p_holder, p_msg>::bind(func, _2, _3);
 }
+
+int ipc_nbre_lib(void *holder, uint64_t version, const char *msg) {
+  return ipc_call<nbre_lib_req, p_holder, p_version, p_msg>::bind(holder,
+                                                                  version, msg);
+}
+void set_recv_nbre_lib_callback(nbre_lib_callback_t func) {
+  ipc_callback<nbre_lib_ack, p_holder, p_status>::bind(func, _2, _3);
+}
+

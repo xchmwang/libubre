@@ -90,6 +90,8 @@ random_dummy::random_dummy(const std::string &name, int initial_account_num,
 
     hub.to_recv_pkg<nbre_experiment_req>([this](
         std::shared_ptr<nbre_experiment_req> req) { m_pkgs.push_back(req); });
+    hub.to_recv_pkg<nbre_lib_req>(
+        [this](std::shared_ptr<nbre_lib_req> req) { m_pkgs.push_back(req); });
 
     nn.get_event_handler()
         ->listen<::ff::net::event::more::tcp_server_accept_connection>(
@@ -327,6 +329,19 @@ void random_dummy::handle_cli_pkgs(generate_block *block) {
           });
       ipc_nbre_experiment(reinterpret_cast<void *>(req->get<p_holder>()),
                           req->get<p_version>(), req->get<p_msg>().c_str());
+    } else if (pkg->type_id() == nbre_lib_req_pkg) {
+      nbre_lib_req *req = (nbre_lib_req *)pkg.get();
+      callback_handler::instance().add_lib_handler(
+          req->get<p_holder>(), [this](uint64_t holder, int32_t ret) {
+            std::cout << "dummy neb recv nbre lib ack" << std::endl;
+            std::shared_ptr<nbre_lib_ack> ack =
+                std::make_shared<nbre_lib_ack>();
+            ack->set<p_holder>(holder);
+            ack->set<p_status>(ret);
+            m_conn->send(ack);
+          });
+      ipc_nbre_lib(reinterpret_cast<void *>(req->get<p_holder>()),
+                   req->get<p_version>(), req->get<p_msg>().c_str());
     } else {
       LOG(INFO) << "pkg type id " << pkg->type_id() << " not found";
     }

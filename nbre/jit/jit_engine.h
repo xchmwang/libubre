@@ -34,6 +34,7 @@ public:
         cantFail(m_main_sym->getAddress(), nullptr));
     if (nullptr == main_func)
       return RT();
+    LOG(INFO) << "find main_func";
     return main_func(args...);
   }
 

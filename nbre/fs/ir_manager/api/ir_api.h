@@ -40,9 +40,10 @@ public:
   static bool ir_exist(const std::string &name, version_t version,
                        rocksdb_storage *rs);
 
-  void get_ir_depends(const std::string &name, version_t version,
-                      rocksdb_storage *rs,
-                      std::vector<std::pair<std::string, version_t>> &irs);
+  static void
+  get_ir_depends(const std::string &name, version_t version,
+                 rocksdb_storage *rs,
+                 std::vector<std::pair<std::string, version_t>> &irs);
 };
 }
 } // namespace neb

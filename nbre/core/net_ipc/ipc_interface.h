@@ -102,6 +102,12 @@ typedef void (*nbre_experiment_callback_t)(enum ipc_status_code isc,
                                            void *holder, const char *ret);
 void set_recv_nbre_experiment_callback(nbre_experiment_callback_t func);
 
+// interface library
+int ipc_nbre_lib(void *holder, uint64_t version, const char *msg);
+typedef void (*nbre_lib_callback_t)(enum ipc_status_code isc, void *holder,
+                                    int32_t ret);
+void set_recv_nbre_lib_callback(nbre_lib_callback_t func);
+
 typedef struct {
   const char *m_nbre_root_dir;
   const char *m_nbre_exe_name;

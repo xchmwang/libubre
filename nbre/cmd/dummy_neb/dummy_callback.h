@@ -84,6 +84,12 @@ public:
   }
   void handle_experiment(void *holder, const char *ret);
 
+  template <typename Func> void add_lib_handler(uint64_t holder, Func &&f) {
+    std::unique_lock<std::mutex> _l(m_mutex);
+    m_lib_handlers.insert(std::make_pair(holder, f));
+  }
+  void handle_lib(void *holder, int32_t ret);
+
 protected:
   template <typename Handlers, typename... ARGS>
   void handle(Handlers &hs, void *holder, ARGS... args) {
@@ -128,6 +134,8 @@ protected:
 
   std::unordered_map<uint64_t, std::function<void(uint64_t, const char *)>>
       m_experiment_handlers;
+  std::unordered_map<uint64_t, std::function<void(uint64_t, int32_t)>>
+      m_lib_handlers;
 };
 
 void nbre_version_callback(ipc_status_code isc, void *handler, uint32_t major,
@@ -155,3 +163,4 @@ void nbre_dip_reward_callback(ipc_status_code isc, void *holder,
 
 void nbre_experiment_callback(ipc_status_code isc, void *holder,
                               const char *ret);
+void nbre_lib_callback(ipc_status_code isc, void *holder, int32_t ret);

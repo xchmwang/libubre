@@ -385,18 +385,10 @@ nr_ret_type entry_point_nr_impl(compatible_uint64_t start_block,
                                 compatible_int64_t d, nr_float_t theta,
                                 nr_float_t mu, nr_float_t lambda) {
 
-  auto nbre_path = neb::configuration::instance().nbre_root_dir();
-  auto bc_path =
-      neb::fs::join_path(nbre_path, "dummy_db/dummy_default_random_.db");
-  neb::fs::bc_storage_session::instance().init(
-      bc_path, neb::fs::storage_open_for_readonly);
-
-  std::unique_ptr<neb::fs::blockchain_api_base> pba =
-      std::unique_ptr<neb::fs::blockchain_api_base>(
-          new neb::fs::blockchain_api_test());
-  transaction_db_ptr_t tdb_ptr =
-      std::make_unique<neb::fs::transaction_db>(pba.get());
-  account_db_ptr_t adb_ptr = std::make_unique<neb::fs::account_db>(pba.get());
+  auto pba = std::unique_ptr<neb::fs::blockchain_api_base>(
+      new neb::fs::blockchain_api_test());
+  auto tdb_ptr = std::make_unique<neb::fs::transaction_db>(pba.get());
+  auto adb_ptr = std::make_unique<neb::fs::account_db>(pba.get());
 
   LOG(INFO) << "start block: " << start_block << " , end block: " << end_block;
   rank_params_t rp{a, b, c, d, theta, mu, lambda};
@@ -429,7 +421,6 @@ nr_ret_type entry_point_nr(compatible_uint64_t start_block,
 
 std::string entry_point_exp(const std::string &msg) {
   entry_point_nr(2, 3);
-  neb::fs::bc_storage_session::instance().release();
   return msg;
 }
 
