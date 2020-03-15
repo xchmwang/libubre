@@ -34,3 +34,6 @@
 [submodule "3rd_party/zlib"]
 	path = 3rd_party/zlib
 	url = https://github.com/madler/zlib.git
+[submodule "3rd_party/bzip2-1.0.6"]
+	path = 3rd_party/bzip2-1.0.6
+	url = https://github.com/enthought/bzip2-1.0.6.git
