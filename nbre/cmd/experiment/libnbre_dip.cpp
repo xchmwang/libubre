@@ -277,6 +277,9 @@ get_dip_reward(neb::block_height_t start_block, neb::block_height_t end_block,
   return dip_infos;
 }
 
+extern nr_ret_type entry_point_nr(compatible_uint64_t start_block,
+                                  compatible_uint64_t end_block);
+
 dip_ret_type entry_point_dip_impl(compatible_uint64_t start_block,
                                   compatible_uint64_t end_block,
                                   version_t version, compatible_uint64_t height,
@@ -317,12 +320,18 @@ dip_ret_type entry_point_dip_impl(compatible_uint64_t start_block,
   return ret;
 }
 
-int main() {
+extern int entry_point_lib(const char *msg);
+
+std::string entry_point_exp(const std::string &msg) {
   dip_float_t alpha = 8e-3;
   dip_float_t beta = 1;
   auto nr_ret = entry_point_nr(2, 3);
   entry_point_dip_impl(2, 3, 1, 3, nr_ret, alpha, beta);
-  std::cout << "dip" << std::endl;
+  return msg;
+}
+int main() {
+  auto ret = entry_point_exp("developer incentive protocol");
+  // std::cout << ret << std::endl;
   neb::fs::bc_storage_session::instance().release();
   return 0;
 }

@@ -28,10 +28,8 @@ neb::rt::dip::dip_ret_type entry_point_dip(neb::compatible_uint64_t height) {
   neb::rt::dip::dip_ret_type ret;
   std::get<0>(ret) = 0;
 
-  uint64_t block_nums_of_a_day = 5;
-  uint64_t days = 1;
-  neb::compatible_uint64_t dip_start_block = 15;
-  neb::compatible_uint64_t dip_block_interval = days * block_nums_of_a_day;
+  neb::compatible_uint64_t dip_start_block = 2;
+  neb::compatible_uint64_t dip_block_interval = 2;
   std::string dip_reward_addr =
       std::string("n1c6y4ctkMeZk624QWBTXuywmNpCWmJZiBq");
   std::string coinbase_addr =

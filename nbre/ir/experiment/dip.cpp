@@ -311,11 +311,14 @@ dip_ret_type entry_point_dip_impl(compatible_uint64_t start_block,
   return ret;
 }
 
+extern int entry_point_lib(const char *msg);
+
 std::string entry_point_exp(const std::string &msg) {
   dip_float_t alpha = 8e-3;
   dip_float_t beta = 1;
   auto nr_ret = entry_point_nr(2, 3);
   entry_point_dip_impl(2, 3, 1, 3, nr_ret, alpha, beta);
+  entry_point_lib(msg.c_str());
   return msg;
 }
 

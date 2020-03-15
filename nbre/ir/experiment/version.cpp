@@ -29,5 +29,5 @@ std::string entry_point_exp(const std::string &msg) {
   v.minor_version() = 1;
   v.patch_version() = 1;
   entry_point_lib(msg.c_str());
-  return std::to_string(v.data());
+  return msg + std::to_string(v.data());
 }

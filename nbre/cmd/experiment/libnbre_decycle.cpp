@@ -307,6 +307,8 @@ void non_recursive_remove_cycles_based_on_time_sequence(
   remove_cycles_based_on_time_sequence(graph);
 }
 
+extern int entry_point_lib(const char *msg);
+
 std::string entry_point_exp(const std::string &msg) {
   neb::rt::transaction_graph tg;
   tg.add_edge(neb::to_address("a"), neb::to_address("a"), 1, 1);
@@ -314,6 +316,7 @@ std::string entry_point_exp(const std::string &msg) {
   tg.add_edge(neb::to_address("b"), neb::to_address("c"), 3, 3);
   tg.add_edge(neb::to_address("c"), neb::to_address("a"), 4, 4);
   non_recursive_remove_cycles_based_on_time_sequence(tg.internal_graph());
+  entry_point_lib(msg.c_str());
   return msg;
 }
 

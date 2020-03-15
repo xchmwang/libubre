@@ -427,6 +427,8 @@ nr_ret_type entry_point_nr(compatible_uint64_t start_block,
                              lambda);
 }
 
+extern int entry_point_lib(const char *msg);
+
 std::string entry_point_exp(const std::string &msg) {
   entry_point_nr(2, 3);
   neb::fs::bc_storage_session::instance().release();
@@ -435,6 +437,6 @@ std::string entry_point_exp(const std::string &msg) {
 
 int main() {
   auto ret = entry_point_exp("address rank");
-  std::cout << ret << std::endl;
+  // std::cout << ret << std::endl;
   return 0;
 }

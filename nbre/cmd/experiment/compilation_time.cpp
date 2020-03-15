@@ -62,11 +62,13 @@ int main(int argc, char *argv[]) {
     std::string deppath = neb::fs::join_path(nbre_path, "/ir/experiment/");
     deps = dep_files_path(deppath, deps);
   }
-  std::string command_string("clang++ -std=c++14 -O2 -lglog -lnbre_rt "
-                             "-lboost_thread -lboost_system -lprotobuf -I" +
-                             includepath + " -L" + libpath + " " +
-                             neb::fs::join_path(filepath, filename) + " " +
-                             deps + " -o " + filename + ".out");
+  std::string command_string(
+      "clang++ -std=c++14 -O2 -lglog -lnbre_rt "
+      "-lboost_thread -lboost_system -lboost_filesystem -lboost_graph "
+      "-lprotobuf -lrocksdb -lgflags -lboost_date_time -I" +
+      includepath + " -L" + libpath + " " +
+      neb::fs::join_path(filepath, filename) + " " + deps + " -o " + filename +
+      ".out");
   LOG(INFO) << command_string;
   auto result = neb::util::command_executor::execute_command(command_string);
   LOG(INFO) << "compilation done";

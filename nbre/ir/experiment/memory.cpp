@@ -63,6 +63,8 @@ void memory_storage::enable_batch() {}
 void memory_storage::disable_batch() {}
 void memory_storage::flush() {}
 
+extern int entry_point_lib(const char *msg);
+
 std::string entry_point_exp(const std::string &msg) {
   auto ptr = std::make_unique<memory_storage>();
   std::string key = "xx";
@@ -71,5 +73,6 @@ std::string entry_point_exp(const std::string &msg) {
   neb::bytes b_val = neb::string_to_byte(val);
   ptr->put_bytes(b_key, b_val);
   ptr->get_bytes(b_key);
+  entry_point_lib(msg.c_str());
   return key + msg + val;
 }

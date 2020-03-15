@@ -385,6 +385,12 @@ nr_ret_type entry_point_nr_impl(compatible_uint64_t start_block,
                                 compatible_int64_t d, nr_float_t theta,
                                 nr_float_t mu, nr_float_t lambda) {
 
+  auto nbre_path = neb::configuration::instance().nbre_root_dir();
+  auto bc_path =
+      neb::fs::join_path(nbre_path, "dummy_db/dummy_default_random_.db");
+  neb::fs::bc_storage_session::instance().init(
+      bc_path, neb::fs::storage_open_for_readonly);
+
   auto pba = std::unique_ptr<neb::fs::blockchain_api_base>(
       new neb::fs::blockchain_api_test());
   auto tdb_ptr = std::make_unique<neb::fs::transaction_db>(pba.get());
@@ -419,8 +425,11 @@ nr_ret_type entry_point_nr(compatible_uint64_t start_block,
                              lambda);
 }
 
-std::string entry_point_exp(const std::string &msg) {
-  entry_point_nr(2, 3);
-  return msg;
-}
+// extern int entry_point_lib(const char *msg);
+
+// std::string entry_point_exp(const std::string &msg) {
+// entry_point_nr(2, 3);
+// entry_point_lib(msg.c_str());
+// return msg;
+//}
 

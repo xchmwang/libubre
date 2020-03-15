@@ -18,31 +18,17 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-#include "common/address.h"
-#include "common/common.h"
 #include "common/version.h"
 #include <string>
 
-struct nr_info_t {
-  neb::address_t m_address;
-  neb::floatxx_t m_in_outs;
-  neb::floatxx_t m_median;
-  neb::floatxx_t m_weight;
-  neb::floatxx_t m_nr_score;
-};
-
-using nr_ret_type =
-    std::tuple<int32_t, std::string, std::vector<std::shared_ptr<nr_info_t>>>;
-using compatible_uint64_t = unsigned long long;
-
-extern nr_ret_type entry_point_nr(compatible_uint64_t start_block,
-                                  compatible_uint64_t end_block);
+extern int entry_point_lib(const char *msg);
 
 std::string entry_point_exp(const std::string &msg) {
   neb::version v;
   v.major_version() = 0;
   v.minor_version() = 1;
   v.patch_version() = 1;
+  entry_point_lib(msg.c_str());
   return msg + std::to_string(v.data());
 }
 

@@ -4,6 +4,12 @@
   "version_minor": 6,
   "version_patch": 0,
   "depends": [
+    {
+      "name": "lib",
+      "version_major": 0,
+      "version_minor": 0,
+      "version_patch": 1
+    }
   ],
   "available_height": 2,
   "cpp_files": [

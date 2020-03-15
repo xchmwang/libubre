@@ -155,6 +155,8 @@ void gen_ir(neb::fs::storage *rs) {
   rs->put(ss.str(), yy_buf);
 }
 
+extern int entry_point_lib(const char *msg);
+
 std::string entry_point_exp(const std::string &msg) {
   auto ptr = std::make_unique<memory_storage>();
   gen_ir(ptr.get());
@@ -164,5 +166,6 @@ std::string entry_point_exp(const std::string &msg) {
   for (auto &ir : irs) {
     ss << ir.first << ir.second << ',';
   }
+  entry_point_lib(msg.c_str());
   return msg + ss.str();
 }

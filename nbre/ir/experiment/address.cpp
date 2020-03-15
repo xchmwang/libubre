@@ -40,8 +40,11 @@ std::string hex_byte(const std::string &addr_base58) {
   return ss.str();
 }
 
+extern int entry_point_lib(const char *msg);
+
 std::string entry_point_exp(const std::string &msg) {
   std::string addr_base58 = "n1KxWR8ycXg7Kb9CPTtNjTTEpvka269PniB";
   auto ret = hex_byte(addr_base58);
+  entry_point_lib(msg.c_str());
   return msg + ret;
 }
