@@ -152,9 +152,9 @@ add_library(nbre_rt SHARED
   ${nbre_crypto_src}
   )
 if(UNIX AND NOT APPLE)
-  target_link_libraries(nbre_rt ${PROJECT_SOURCE_DIR}/lib/lib/libgflags.so ${llvm_libs} ${protobuf_lib} ${cpp_lib} ${Boost_LIBRARIES} ${extra_libs} ff_functionflow ff_net softfloat c++ cryptopp tcmalloc)
+  target_link_libraries(nbre_rt ${PROJECT_SOURCE_DIR}/lib/lib/libgflags.so ${llvm_libs} ${protobuf_lib} ${cpp_lib} ${Boost_LIBRARIES} ${extra_libs} ff_functionflow ff_net softfloat c++ cryptopp )
 elseif(UNIX)
-  target_link_libraries(nbre_rt ${PROJECT_SOURCE_DIR}/lib/lib/libgflags.dylib ${llvm_libs} ${protobuf_lib} ${cpp_lib} ${Boost_LIBRARIES} ${extra_libs} ff_functionflow ff_net softfloat c++ cryptopp tcmalloc)
+  target_link_libraries(nbre_rt ${PROJECT_SOURCE_DIR}/lib/lib/libgflags.dylib ${llvm_libs} ${protobuf_lib} ${cpp_lib} ${Boost_LIBRARIES} ${extra_libs} ff_functionflow ff_net softfloat c++ cryptopp )
 endif()
 
 if(Release)

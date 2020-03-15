@@ -245,7 +245,7 @@ check_install_boost() {
 check_install_gflags() {
   if [ ! -d $CUR_DIR/3rd_party/gflags ]; then
     cd $CUR_DIR/3rd_party
-    git clone -b v2.2.1 https://github.com/gflags/gflags.git
+    #git clone -b v2.2.1 https://github.com/gflags/gflags.git
   fi
 
   if [ ! -e $CUR_DIR/lib/lib/libgflags.$DYLIB ]; then
@@ -387,15 +387,6 @@ check_install_crypto() {
   check_script_run cryptopp
 }
 
-check_install_gperftools() {
-  if [ ! -e $CUR_DIR/lib/lib/libprofiler.$DYLIB ]; then
-    cd $CUR_DIR/3rd_party/gperftools
-    ./autogen.sh
-    build_with_configure gperftools
-  fi
-  check_script_run gperftools
-}
-
 install_system_tools
 check_install_cmake
 check_install_llvm
@@ -411,6 +402,5 @@ check_install_protoc
 check_install_softfloat
 check_install_sha
 check_install_crypto
-check_install_gperftools
 
 cd $CUR_DIR
