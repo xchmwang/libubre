@@ -53,6 +53,6 @@ normal.db*
 3rd_party/llvm-build/
 
 bin/
-./build/
+build/
 lib/
 lib_llvm/
