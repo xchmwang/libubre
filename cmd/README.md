@@ -1,3 +1,3 @@
-# cmd
+# force
 
-All src of applications are at this directory.
+Src of Nebulas Blockchain Runtime Environment.
