@@ -98,7 +98,7 @@ if(UNIX AND NOT APPLE)
     ${PROJECT_SOURCE_DIR}/lib/lib/libboost_program_options.so)
   set(extra_libs
     ${PROJECT_SOURCE_DIR}/lib/lib/libglog.so
-    ${PROJECT_SOURCE_DIR}/lib/lib/librocksdb.so.5
+    ${PROJECT_SOURCE_DIR}/lib/lib/librocksdb.so.6
     rt
     bz2 z zstd snappy lz4
     )
