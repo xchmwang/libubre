@@ -5,174 +5,155 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_genesis_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_genesis_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_GenesisConsensusDpos;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_genesis_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_GenesisMeta;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_genesis_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_GenesisTokenDistribution;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_genesis_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_GenesisConsensus;
-}  // namespace protobuf_genesis_2eproto
+#include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_genesis_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GenesisConsensus_genesis_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_genesis_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GenesisConsensusDpos_genesis_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_genesis_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GenesisMeta_genesis_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_genesis_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GenesisTokenDistribution_genesis_2eproto;
 namespace corepb {
 class GenesisDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Genesis>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Genesis> _instance;
 } _Genesis_default_instance_;
 class GenesisMetaDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<GenesisMeta>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GenesisMeta> _instance;
 } _GenesisMeta_default_instance_;
 class GenesisConsensusDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<GenesisConsensus>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GenesisConsensus> _instance;
 } _GenesisConsensus_default_instance_;
 class GenesisConsensusDposDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<GenesisConsensusDpos>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GenesisConsensusDpos> _instance;
 } _GenesisConsensusDpos_default_instance_;
 class GenesisTokenDistributionDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<GenesisTokenDistribution>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GenesisTokenDistribution> _instance;
 } _GenesisTokenDistribution_default_instance_;
 }  // namespace corepb
-namespace protobuf_genesis_2eproto {
-static void InitDefaultsGenesis() {
+static void InitDefaultsscc_info_Genesis_genesis_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::corepb::_Genesis_default_instance_;
     new (ptr) ::corepb::Genesis();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::corepb::Genesis::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_Genesis =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsGenesis}, {
-      &protobuf_genesis_2eproto::scc_info_GenesisMeta.base,
-      &protobuf_genesis_2eproto::scc_info_GenesisConsensus.base,
-      &protobuf_genesis_2eproto::scc_info_GenesisTokenDistribution.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_Genesis_genesis_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_Genesis_genesis_2eproto}, {
+      &scc_info_GenesisMeta_genesis_2eproto.base,
+      &scc_info_GenesisConsensus_genesis_2eproto.base,
+      &scc_info_GenesisTokenDistribution_genesis_2eproto.base,}};
 
-static void InitDefaultsGenesisMeta() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::corepb::_GenesisMeta_default_instance_;
-    new (ptr) ::corepb::GenesisMeta();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::corepb::GenesisMeta::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_GenesisMeta =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGenesisMeta}, {}};
-
-static void InitDefaultsGenesisConsensus() {
+static void InitDefaultsscc_info_GenesisConsensus_genesis_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::corepb::_GenesisConsensus_default_instance_;
     new (ptr) ::corepb::GenesisConsensus();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::corepb::GenesisConsensus::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_GenesisConsensus =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGenesisConsensus}, {
-      &protobuf_genesis_2eproto::scc_info_GenesisConsensusDpos.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GenesisConsensus_genesis_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GenesisConsensus_genesis_2eproto}, {
+      &scc_info_GenesisConsensusDpos_genesis_2eproto.base,}};
 
-static void InitDefaultsGenesisConsensusDpos() {
+static void InitDefaultsscc_info_GenesisConsensusDpos_genesis_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::corepb::_GenesisConsensusDpos_default_instance_;
     new (ptr) ::corepb::GenesisConsensusDpos();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::corepb::GenesisConsensusDpos::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_GenesisConsensusDpos =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGenesisConsensusDpos}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GenesisConsensusDpos_genesis_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GenesisConsensusDpos_genesis_2eproto}, {}};
 
-static void InitDefaultsGenesisTokenDistribution() {
+static void InitDefaultsscc_info_GenesisMeta_genesis_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::corepb::_GenesisMeta_default_instance_;
+    new (ptr) ::corepb::GenesisMeta();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::corepb::GenesisMeta::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GenesisMeta_genesis_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GenesisMeta_genesis_2eproto}, {}};
+
+static void InitDefaultsscc_info_GenesisTokenDistribution_genesis_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::corepb::_GenesisTokenDistribution_default_instance_;
     new (ptr) ::corepb::GenesisTokenDistribution();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::corepb::GenesisTokenDistribution::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_GenesisTokenDistribution =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGenesisTokenDistribution}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GenesisTokenDistribution_genesis_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GenesisTokenDistribution_genesis_2eproto}, {}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Genesis.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_GenesisMeta.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_GenesisConsensus.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_GenesisConsensusDpos.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_GenesisTokenDistribution.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_genesis_2eproto[5];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_genesis_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_genesis_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[5];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_genesis_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::Genesis, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::corepb::Genesis, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::Genesis, meta_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::Genesis, consensus_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::Genesis, token_distribution_),
+  PROTOBUF_FIELD_OFFSET(::corepb::Genesis, meta_),
+  PROTOBUF_FIELD_OFFSET(::corepb::Genesis, consensus_),
+  PROTOBUF_FIELD_OFFSET(::corepb::Genesis, token_distribution_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisMeta, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisMeta, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisMeta, chain_id_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisMeta, chain_id_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisConsensus, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisConsensus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisConsensus, dpos_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisConsensus, dpos_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisConsensusDpos, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisConsensusDpos, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisConsensusDpos, dynasty_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisConsensusDpos, dynasty_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisTokenDistribution, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisTokenDistribution, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisTokenDistribution, address_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::GenesisTokenDistribution, value_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisTokenDistribution, address_),
+  PROTOBUF_FIELD_OFFSET(::corepb::GenesisTokenDistribution, value_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::corepb::Genesis)},
   { 8, -1, sizeof(::corepb::GenesisMeta)},
   { 14, -1, sizeof(::corepb::GenesisConsensus)},
@@ -180,63 +161,46 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 26, -1, sizeof(::corepb::GenesisTokenDistribution)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::corepb::_Genesis_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::corepb::_GenesisMeta_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::corepb::_GenesisConsensus_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::corepb::_GenesisConsensusDpos_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::corepb::_GenesisTokenDistribution_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::corepb::_Genesis_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::corepb::_GenesisMeta_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::corepb::_GenesisConsensus_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::corepb::_GenesisConsensusDpos_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::corepb::_GenesisTokenDistribution_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "genesis.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_genesis_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\rgenesis.proto\022\006corepb\"\227\001\n\007Genesis\022!\n\004m"
+  "eta\030\001 \001(\0132\023.corepb.GenesisMeta\022+\n\tconsen"
+  "sus\030\002 \001(\0132\030.corepb.GenesisConsensus\022<\n\022t"
+  "oken_distribution\030\003 \003(\0132 .corepb.Genesis"
+  "TokenDistribution\"\037\n\013GenesisMeta\022\020\n\010chai"
+  "n_id\030\001 \001(\r\">\n\020GenesisConsensus\022*\n\004dpos\030\001"
+  " \001(\0132\034.corepb.GenesisConsensusDpos\"\'\n\024Ge"
+  "nesisConsensusDpos\022\017\n\007dynasty\030\001 \003(\t\":\n\030G"
+  "enesisTokenDistribution\022\017\n\007address\030\001 \001(\t"
+  "\022\r\n\005value\030\002 \001(\tb\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_genesis_2eproto_deps[1] = {
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_genesis_2eproto_sccs[5] = {
+  &scc_info_Genesis_genesis_2eproto.base,
+  &scc_info_GenesisConsensus_genesis_2eproto.base,
+  &scc_info_GenesisConsensusDpos_genesis_2eproto.base,
+  &scc_info_GenesisMeta_genesis_2eproto.base,
+  &scc_info_GenesisTokenDistribution_genesis_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_genesis_2eproto_once;
+static bool descriptor_table_genesis_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_genesis_2eproto = {
+  &descriptor_table_genesis_2eproto_initialized, descriptor_table_protodef_genesis_2eproto, "genesis.proto", 383,
+  &descriptor_table_genesis_2eproto_once, descriptor_table_genesis_2eproto_sccs, descriptor_table_genesis_2eproto_deps, 5, 0,
+  schemas, file_default_instances, TableStruct_genesis_2eproto::offsets,
+  file_level_metadata_genesis_2eproto, 5, file_level_enum_descriptors_genesis_2eproto, file_level_service_descriptors_genesis_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 5);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\rgenesis.proto\022\006corepb\"\227\001\n\007Genesis\022!\n\004m"
-      "eta\030\001 \001(\0132\023.corepb.GenesisMeta\022+\n\tconsen"
-      "sus\030\002 \001(\0132\030.corepb.GenesisConsensus\022<\n\022t"
-      "oken_distribution\030\003 \003(\0132 .corepb.Genesis"
-      "TokenDistribution\"\037\n\013GenesisMeta\022\020\n\010chai"
-      "n_id\030\001 \001(\r\">\n\020GenesisConsensus\022*\n\004dpos\030\001"
-      " \001(\0132\034.corepb.GenesisConsensusDpos\"\'\n\024Ge"
-      "nesisConsensusDpos\022\017\n\007dynasty\030\001 \003(\t\":\n\030G"
-      "enesisTokenDistribution\022\017\n\007address\030\001 \001(\t"
-      "\022\r\n\005value\030\002 \001(\tb\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 383);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "genesis.proto", &protobuf_RegisterTypes);
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_genesis_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_genesis_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_genesis_2eproto)), true);
 namespace corepb {
 
 // ===================================================================
@@ -247,38 +211,45 @@ void Genesis::InitAsDefaultInstance() {
   ::corepb::_Genesis_default_instance_._instance.get_mutable()->consensus_ = const_cast< ::corepb::GenesisConsensus*>(
       ::corepb::GenesisConsensus::internal_default_instance());
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Genesis::kMetaFieldNumber;
-const int Genesis::kConsensusFieldNumber;
-const int Genesis::kTokenDistributionFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Genesis::_Internal {
+ public:
+  static const ::corepb::GenesisMeta& meta(const Genesis* msg);
+  static const ::corepb::GenesisConsensus& consensus(const Genesis* msg);
+};
 
+const ::corepb::GenesisMeta&
+Genesis::_Internal::meta(const Genesis* msg) {
+  return *msg->meta_;
+}
+const ::corepb::GenesisConsensus&
+Genesis::_Internal::consensus(const Genesis* msg) {
+  return *msg->consensus_;
+}
 Genesis::Genesis()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_genesis_2eproto::scc_info_Genesis.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:corepb.Genesis)
 }
 Genesis::Genesis(const Genesis& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       token_distribution_(from.token_distribution_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_meta()) {
+  if (from._internal_has_meta()) {
     meta_ = new ::corepb::GenesisMeta(*from.meta_);
   } else {
-    meta_ = NULL;
+    meta_ = nullptr;
   }
-  if (from.has_consensus()) {
+  if (from._internal_has_consensus()) {
     consensus_ = new ::corepb::GenesisConsensus(*from.consensus_);
   } else {
-    consensus_ = NULL;
+    consensus_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:corepb.Genesis)
 }
 
 void Genesis::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Genesis_genesis_2eproto.base);
   ::memset(&meta_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&consensus_) -
       reinterpret_cast<char*>(&meta_)) + sizeof(consensus_));
@@ -297,167 +268,116 @@ void Genesis::SharedDtor() {
 void Genesis::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Genesis::descriptor() {
-  ::protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Genesis& Genesis::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_genesis_2eproto::scc_info_Genesis.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Genesis_genesis_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void Genesis::Clear() {
 // @@protoc_insertion_point(message_clear_start:corepb.Genesis)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   token_distribution_.Clear();
-  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && meta_ != nullptr) {
     delete meta_;
   }
-  meta_ = NULL;
-  if (GetArenaNoVirtual() == NULL && consensus_ != NULL) {
+  meta_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && consensus_ != nullptr) {
     delete consensus_;
   }
-  consensus_ = NULL;
+  consensus_ = nullptr;
   _internal_metadata_.Clear();
 }
 
-bool Genesis::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:corepb.Genesis)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* Genesis::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // .corepb.GenesisMeta meta = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_meta()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_meta(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .corepb.GenesisConsensus consensus = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_consensus()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_consensus(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // repeated .corepb.GenesisTokenDistribution token_distribution = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_token_distribution()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_token_distribution(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:corepb.Genesis)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:corepb.Genesis)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void Genesis::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:corepb.Genesis)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .corepb.GenesisMeta meta = 1;
-  if (this->has_meta()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_meta(), output);
-  }
-
-  // .corepb.GenesisConsensus consensus = 2;
-  if (this->has_consensus()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_consensus(), output);
-  }
-
-  // repeated .corepb.GenesisTokenDistribution token_distribution = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->token_distribution_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->token_distribution(static_cast<int>(i)),
-      output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:corepb.Genesis)
-}
-
-::google::protobuf::uint8* Genesis::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* Genesis::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:corepb.Genesis)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .corepb.GenesisMeta meta = 1;
   if (this->has_meta()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_meta(), deterministic, target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::meta(this), target, stream);
   }
 
   // .corepb.GenesisConsensus consensus = 2;
   if (this->has_consensus()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_consensus(), deterministic, target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::consensus(this), target, stream);
   }
 
   // repeated .corepb.GenesisTokenDistribution token_distribution = 3;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->token_distribution_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->token_distribution(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_token_distribution_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_token_distribution(i), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:corepb.Genesis)
   return target;
@@ -467,50 +387,49 @@ size_t Genesis::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:corepb.Genesis)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .corepb.GenesisTokenDistribution token_distribution = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->token_distribution_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->token_distribution(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_token_distribution_size();
+  for (const auto& msg : this->token_distribution_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // .corepb.GenesisMeta meta = 1;
   if (this->has_meta()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *meta_);
   }
 
   // .corepb.GenesisConsensus consensus = 2;
   if (this->has_consensus()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *consensus_);
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void Genesis::MergeFrom(const ::google::protobuf::Message& from) {
+void Genesis::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:corepb.Genesis)
   GOOGLE_DCHECK_NE(&from, this);
   const Genesis* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Genesis>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Genesis>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:corepb.Genesis)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:corepb.Genesis)
     MergeFrom(*source);
@@ -521,19 +440,19 @@ void Genesis::MergeFrom(const Genesis& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:corepb.Genesis)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   token_distribution_.MergeFrom(from.token_distribution_);
   if (from.has_meta()) {
-    mutable_meta()->::corepb::GenesisMeta::MergeFrom(from.meta());
+    _internal_mutable_meta()->::corepb::GenesisMeta::MergeFrom(from._internal_meta());
   }
   if (from.has_consensus()) {
-    mutable_consensus()->::corepb::GenesisConsensus::MergeFrom(from.consensus());
+    _internal_mutable_consensus()->::corepb::GenesisConsensus::MergeFrom(from._internal_consensus());
   }
 }
 
-void Genesis::CopyFrom(const ::google::protobuf::Message& from) {
+void Genesis::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:corepb.Genesis)
   if (&from == this) return;
   Clear();
@@ -551,21 +470,16 @@ bool Genesis::IsInitialized() const {
   return true;
 }
 
-void Genesis::Swap(Genesis* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Genesis::InternalSwap(Genesis* other) {
   using std::swap;
-  CastToBase(&token_distribution_)->InternalSwap(CastToBase(&other->token_distribution_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  token_distribution_.InternalSwap(&other->token_distribution_);
   swap(meta_, other->meta_);
   swap(consensus_, other->consensus_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata Genesis::GetMetadata() const {
-  protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Genesis::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -573,20 +487,18 @@ void Genesis::InternalSwap(Genesis* other) {
 
 void GenesisMeta::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GenesisMeta::kChainIdFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class GenesisMeta::_Internal {
+ public:
+};
 
 GenesisMeta::GenesisMeta()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_genesis_2eproto::scc_info_GenesisMeta.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:corepb.GenesisMeta)
 }
 GenesisMeta::GenesisMeta(const GenesisMeta& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   chain_id_ = from.chain_id_;
   // @@protoc_insertion_point(copy_constructor:corepb.GenesisMeta)
@@ -607,20 +519,15 @@ void GenesisMeta::SharedDtor() {
 void GenesisMeta::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* GenesisMeta::descriptor() {
-  ::protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const GenesisMeta& GenesisMeta::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_genesis_2eproto::scc_info_GenesisMeta.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GenesisMeta_genesis_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void GenesisMeta::Clear() {
 // @@protoc_insertion_point(message_clear_start:corepb.GenesisMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -628,83 +535,55 @@ void GenesisMeta::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool GenesisMeta::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:corepb.GenesisMeta)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* GenesisMeta::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 chain_id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &chain_id_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          chain_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:corepb.GenesisMeta)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:corepb.GenesisMeta)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void GenesisMeta::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:corepb.GenesisMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 chain_id = 1;
-  if (this->chain_id() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->chain_id(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:corepb.GenesisMeta)
-}
-
-::google::protobuf::uint8* GenesisMeta::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* GenesisMeta::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:corepb.GenesisMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 chain_id = 1;
   if (this->chain_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->chain_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_chain_id(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:corepb.GenesisMeta)
   return target;
@@ -714,32 +593,35 @@ size_t GenesisMeta::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:corepb.GenesisMeta)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 chain_id = 1;
   if (this->chain_id() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->chain_id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_chain_id());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GenesisMeta::MergeFrom(const ::google::protobuf::Message& from) {
+void GenesisMeta::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:corepb.GenesisMeta)
   GOOGLE_DCHECK_NE(&from, this);
   const GenesisMeta* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const GenesisMeta>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GenesisMeta>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:corepb.GenesisMeta)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:corepb.GenesisMeta)
     MergeFrom(*source);
@@ -750,15 +632,15 @@ void GenesisMeta::MergeFrom(const GenesisMeta& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:corepb.GenesisMeta)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.chain_id() != 0) {
-    set_chain_id(from.chain_id());
+    _internal_set_chain_id(from._internal_chain_id());
   }
 }
 
-void GenesisMeta::CopyFrom(const ::google::protobuf::Message& from) {
+void GenesisMeta::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:corepb.GenesisMeta)
   if (&from == this) return;
   Clear();
@@ -776,19 +658,14 @@ bool GenesisMeta::IsInitialized() const {
   return true;
 }
 
-void GenesisMeta::Swap(GenesisMeta* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void GenesisMeta::InternalSwap(GenesisMeta* other) {
   using std::swap;
-  swap(chain_id_, other->chain_id_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(chain_id_, other->chain_id_);
 }
 
-::google::protobuf::Metadata GenesisMeta::GetMetadata() const {
-  protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata GenesisMeta::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -798,31 +675,35 @@ void GenesisConsensus::InitAsDefaultInstance() {
   ::corepb::_GenesisConsensus_default_instance_._instance.get_mutable()->dpos_ = const_cast< ::corepb::GenesisConsensusDpos*>(
       ::corepb::GenesisConsensusDpos::internal_default_instance());
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GenesisConsensus::kDposFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class GenesisConsensus::_Internal {
+ public:
+  static const ::corepb::GenesisConsensusDpos& dpos(const GenesisConsensus* msg);
+};
 
+const ::corepb::GenesisConsensusDpos&
+GenesisConsensus::_Internal::dpos(const GenesisConsensus* msg) {
+  return *msg->dpos_;
+}
 GenesisConsensus::GenesisConsensus()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_genesis_2eproto::scc_info_GenesisConsensus.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:corepb.GenesisConsensus)
 }
 GenesisConsensus::GenesisConsensus(const GenesisConsensus& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_dpos()) {
+  if (from._internal_has_dpos()) {
     dpos_ = new ::corepb::GenesisConsensusDpos(*from.dpos_);
   } else {
-    dpos_ = NULL;
+    dpos_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:corepb.GenesisConsensus)
 }
 
 void GenesisConsensus::SharedCtor() {
-  dpos_ = NULL;
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GenesisConsensus_genesis_2eproto.base);
+  dpos_ = nullptr;
 }
 
 GenesisConsensus::~GenesisConsensus() {
@@ -837,108 +718,76 @@ void GenesisConsensus::SharedDtor() {
 void GenesisConsensus::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* GenesisConsensus::descriptor() {
-  ::protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const GenesisConsensus& GenesisConsensus::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_genesis_2eproto::scc_info_GenesisConsensus.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GenesisConsensus_genesis_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void GenesisConsensus::Clear() {
 // @@protoc_insertion_point(message_clear_start:corepb.GenesisConsensus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == NULL && dpos_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && dpos_ != nullptr) {
     delete dpos_;
   }
-  dpos_ = NULL;
+  dpos_ = nullptr;
   _internal_metadata_.Clear();
 }
 
-bool GenesisConsensus::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:corepb.GenesisConsensus)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* GenesisConsensus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // .corepb.GenesisConsensusDpos dpos = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_dpos()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_dpos(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:corepb.GenesisConsensus)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:corepb.GenesisConsensus)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void GenesisConsensus::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:corepb.GenesisConsensus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .corepb.GenesisConsensusDpos dpos = 1;
-  if (this->has_dpos()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_dpos(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:corepb.GenesisConsensus)
-}
-
-::google::protobuf::uint8* GenesisConsensus::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* GenesisConsensus::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:corepb.GenesisConsensus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .corepb.GenesisConsensusDpos dpos = 1;
   if (this->has_dpos()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_dpos(), deterministic, target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::dpos(this), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:corepb.GenesisConsensus)
   return target;
@@ -948,32 +797,35 @@ size_t GenesisConsensus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:corepb.GenesisConsensus)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // .corepb.GenesisConsensusDpos dpos = 1;
   if (this->has_dpos()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *dpos_);
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GenesisConsensus::MergeFrom(const ::google::protobuf::Message& from) {
+void GenesisConsensus::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:corepb.GenesisConsensus)
   GOOGLE_DCHECK_NE(&from, this);
   const GenesisConsensus* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const GenesisConsensus>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GenesisConsensus>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:corepb.GenesisConsensus)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:corepb.GenesisConsensus)
     MergeFrom(*source);
@@ -984,15 +836,15 @@ void GenesisConsensus::MergeFrom(const GenesisConsensus& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:corepb.GenesisConsensus)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_dpos()) {
-    mutable_dpos()->::corepb::GenesisConsensusDpos::MergeFrom(from.dpos());
+    _internal_mutable_dpos()->::corepb::GenesisConsensusDpos::MergeFrom(from._internal_dpos());
   }
 }
 
-void GenesisConsensus::CopyFrom(const ::google::protobuf::Message& from) {
+void GenesisConsensus::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:corepb.GenesisConsensus)
   if (&from == this) return;
   Clear();
@@ -1010,19 +862,14 @@ bool GenesisConsensus::IsInitialized() const {
   return true;
 }
 
-void GenesisConsensus::Swap(GenesisConsensus* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void GenesisConsensus::InternalSwap(GenesisConsensus* other) {
   using std::swap;
-  swap(dpos_, other->dpos_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(dpos_, other->dpos_);
 }
 
-::google::protobuf::Metadata GenesisConsensus::GetMetadata() const {
-  protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata GenesisConsensus::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -1030,26 +877,25 @@ void GenesisConsensus::InternalSwap(GenesisConsensus* other) {
 
 void GenesisConsensusDpos::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GenesisConsensusDpos::kDynastyFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class GenesisConsensusDpos::_Internal {
+ public:
+};
 
 GenesisConsensusDpos::GenesisConsensusDpos()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_genesis_2eproto::scc_info_GenesisConsensusDpos.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:corepb.GenesisConsensusDpos)
 }
 GenesisConsensusDpos::GenesisConsensusDpos(const GenesisConsensusDpos& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       dynasty_(from.dynasty_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:corepb.GenesisConsensusDpos)
 }
 
 void GenesisConsensusDpos::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GenesisConsensusDpos_genesis_2eproto.base);
 }
 
 GenesisConsensusDpos::~GenesisConsensusDpos() {
@@ -1063,20 +909,15 @@ void GenesisConsensusDpos::SharedDtor() {
 void GenesisConsensusDpos::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* GenesisConsensusDpos::descriptor() {
-  ::protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const GenesisConsensusDpos& GenesisConsensusDpos::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_genesis_2eproto::scc_info_GenesisConsensusDpos.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GenesisConsensusDpos_genesis_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void GenesisConsensusDpos::Clear() {
 // @@protoc_insertion_point(message_clear_start:corepb.GenesisConsensusDpos)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1084,96 +925,66 @@ void GenesisConsensusDpos::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool GenesisConsensusDpos::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:corepb.GenesisConsensusDpos)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* GenesisConsensusDpos::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // repeated string dynasty = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_dynasty()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->dynasty(this->dynasty_size() - 1).data(),
-            static_cast<int>(this->dynasty(this->dynasty_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "corepb.GenesisConsensusDpos.dynasty"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_dynasty();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "corepb.GenesisConsensusDpos.dynasty"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:corepb.GenesisConsensusDpos)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:corepb.GenesisConsensusDpos)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void GenesisConsensusDpos::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:corepb.GenesisConsensusDpos)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated string dynasty = 1;
-  for (int i = 0, n = this->dynasty_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->dynasty(i).data(), static_cast<int>(this->dynasty(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "corepb.GenesisConsensusDpos.dynasty");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      1, this->dynasty(i), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:corepb.GenesisConsensusDpos)
-}
-
-::google::protobuf::uint8* GenesisConsensusDpos::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* GenesisConsensusDpos::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:corepb.GenesisConsensusDpos)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string dynasty = 1;
-  for (int i = 0, n = this->dynasty_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->dynasty(i).data(), static_cast<int>(this->dynasty(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+  for (int i = 0, n = this->_internal_dynasty_size(); i < n; i++) {
+    const auto& s = this->_internal_dynasty(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "corepb.GenesisConsensusDpos.dynasty");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(1, this->dynasty(i), target);
+    target = stream->WriteString(1, s, target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:corepb.GenesisConsensusDpos)
   return target;
@@ -1183,33 +994,36 @@ size_t GenesisConsensusDpos::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:corepb.GenesisConsensusDpos)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated string dynasty = 1;
   total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->dynasty_size());
-  for (int i = 0, n = this->dynasty_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->dynasty(i));
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(dynasty_.size());
+  for (int i = 0, n = dynasty_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      dynasty_.Get(i));
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GenesisConsensusDpos::MergeFrom(const ::google::protobuf::Message& from) {
+void GenesisConsensusDpos::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:corepb.GenesisConsensusDpos)
   GOOGLE_DCHECK_NE(&from, this);
   const GenesisConsensusDpos* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const GenesisConsensusDpos>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GenesisConsensusDpos>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:corepb.GenesisConsensusDpos)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:corepb.GenesisConsensusDpos)
     MergeFrom(*source);
@@ -1220,13 +1034,13 @@ void GenesisConsensusDpos::MergeFrom(const GenesisConsensusDpos& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:corepb.GenesisConsensusDpos)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   dynasty_.MergeFrom(from.dynasty_);
 }
 
-void GenesisConsensusDpos::CopyFrom(const ::google::protobuf::Message& from) {
+void GenesisConsensusDpos::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:corepb.GenesisConsensusDpos)
   if (&from == this) return;
   Clear();
@@ -1244,19 +1058,14 @@ bool GenesisConsensusDpos::IsInitialized() const {
   return true;
 }
 
-void GenesisConsensusDpos::Swap(GenesisConsensusDpos* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void GenesisConsensusDpos::InternalSwap(GenesisConsensusDpos* other) {
   using std::swap;
-  dynasty_.InternalSwap(CastToBase(&other->dynasty_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  dynasty_.InternalSwap(&other->dynasty_);
 }
 
-::google::protobuf::Metadata GenesisConsensusDpos::GetMetadata() const {
-  protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata GenesisConsensusDpos::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -1264,36 +1073,34 @@ void GenesisConsensusDpos::InternalSwap(GenesisConsensusDpos* other) {
 
 void GenesisTokenDistribution::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GenesisTokenDistribution::kAddressFieldNumber;
-const int GenesisTokenDistribution::kValueFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class GenesisTokenDistribution::_Internal {
+ public:
+};
 
 GenesisTokenDistribution::GenesisTokenDistribution()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_genesis_2eproto::scc_info_GenesisTokenDistribution.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:corepb.GenesisTokenDistribution)
 }
 GenesisTokenDistribution::GenesisTokenDistribution(const GenesisTokenDistribution& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.address().size() > 0) {
-    address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
+  address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_address().empty()) {
+    address_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.address_);
   }
-  value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.value().size() > 0) {
-    value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_value().empty()) {
+    value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
   // @@protoc_insertion_point(copy_constructor:corepb.GenesisTokenDistribution)
 }
 
 void GenesisTokenDistribution::SharedCtor() {
-  address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GenesisTokenDistribution_genesis_2eproto.base);
+  address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GenesisTokenDistribution::~GenesisTokenDistribution() {
@@ -1302,162 +1109,104 @@ GenesisTokenDistribution::~GenesisTokenDistribution() {
 }
 
 void GenesisTokenDistribution::SharedDtor() {
-  address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GenesisTokenDistribution::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* GenesisTokenDistribution::descriptor() {
-  ::protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const GenesisTokenDistribution& GenesisTokenDistribution::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_genesis_2eproto::scc_info_GenesisTokenDistribution.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GenesisTokenDistribution_genesis_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void GenesisTokenDistribution::Clear() {
 // @@protoc_insertion_point(message_clear_start:corepb.GenesisTokenDistribution)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  address_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
-bool GenesisTokenDistribution::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:corepb.GenesisTokenDistribution)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* GenesisTokenDistribution::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // string address = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_address()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->address().data(), static_cast<int>(this->address().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "corepb.GenesisTokenDistribution.address"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_address();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "corepb.GenesisTokenDistribution.address"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string value = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_value()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->value().data(), static_cast<int>(this->value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "corepb.GenesisTokenDistribution.value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_value();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "corepb.GenesisTokenDistribution.value"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:corepb.GenesisTokenDistribution)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:corepb.GenesisTokenDistribution)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void GenesisTokenDistribution::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:corepb.GenesisTokenDistribution)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string address = 1;
-  if (this->address().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->address().data(), static_cast<int>(this->address().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "corepb.GenesisTokenDistribution.address");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->address(), output);
-  }
-
-  // string value = 2;
-  if (this->value().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->value().data(), static_cast<int>(this->value().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "corepb.GenesisTokenDistribution.value");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->value(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:corepb.GenesisTokenDistribution)
-}
-
-::google::protobuf::uint8* GenesisTokenDistribution::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* GenesisTokenDistribution::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:corepb.GenesisTokenDistribution)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string address = 1;
   if (this->address().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->address().data(), static_cast<int>(this->address().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_address().data(), static_cast<int>(this->_internal_address().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "corepb.GenesisTokenDistribution.address");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->address(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_address(), target);
   }
 
   // string value = 2;
   if (this->value().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->value().data(), static_cast<int>(this->value().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "corepb.GenesisTokenDistribution.value");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->value(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_value(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:corepb.GenesisTokenDistribution)
   return target;
@@ -1467,39 +1216,42 @@ size_t GenesisTokenDistribution::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:corepb.GenesisTokenDistribution)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string address = 1;
   if (this->address().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->address());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_address());
   }
 
   // string value = 2;
   if (this->value().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->value());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_value());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GenesisTokenDistribution::MergeFrom(const ::google::protobuf::Message& from) {
+void GenesisTokenDistribution::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:corepb.GenesisTokenDistribution)
   GOOGLE_DCHECK_NE(&from, this);
   const GenesisTokenDistribution* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const GenesisTokenDistribution>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GenesisTokenDistribution>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:corepb.GenesisTokenDistribution)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:corepb.GenesisTokenDistribution)
     MergeFrom(*source);
@@ -1510,20 +1262,20 @@ void GenesisTokenDistribution::MergeFrom(const GenesisTokenDistribution& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:corepb.GenesisTokenDistribution)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.address().size() > 0) {
 
-    address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
+    address_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.address_);
   }
   if (from.value().size() > 0) {
 
-    value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
+    value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
 }
 
-void GenesisTokenDistribution::CopyFrom(const ::google::protobuf::Message& from) {
+void GenesisTokenDistribution::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:corepb.GenesisTokenDistribution)
   if (&from == this) return;
   Clear();
@@ -1541,45 +1293,39 @@ bool GenesisTokenDistribution::IsInitialized() const {
   return true;
 }
 
-void GenesisTokenDistribution::Swap(GenesisTokenDistribution* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void GenesisTokenDistribution::InternalSwap(GenesisTokenDistribution* other) {
   using std::swap;
-  address_.Swap(&other->address_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  value_.Swap(&other->value_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  address_.Swap(&other->address_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
-::google::protobuf::Metadata GenesisTokenDistribution::GetMetadata() const {
-  protobuf_genesis_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_genesis_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata GenesisTokenDistribution::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace corepb
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::corepb::Genesis* Arena::CreateMaybeMessage< ::corepb::Genesis >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::corepb::Genesis* Arena::CreateMaybeMessage< ::corepb::Genesis >(Arena* arena) {
   return Arena::CreateInternal< ::corepb::Genesis >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::corepb::GenesisMeta* Arena::CreateMaybeMessage< ::corepb::GenesisMeta >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::corepb::GenesisMeta* Arena::CreateMaybeMessage< ::corepb::GenesisMeta >(Arena* arena) {
   return Arena::CreateInternal< ::corepb::GenesisMeta >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::corepb::GenesisConsensus* Arena::CreateMaybeMessage< ::corepb::GenesisConsensus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::corepb::GenesisConsensus* Arena::CreateMaybeMessage< ::corepb::GenesisConsensus >(Arena* arena) {
   return Arena::CreateInternal< ::corepb::GenesisConsensus >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::corepb::GenesisConsensusDpos* Arena::CreateMaybeMessage< ::corepb::GenesisConsensusDpos >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::corepb::GenesisConsensusDpos* Arena::CreateMaybeMessage< ::corepb::GenesisConsensusDpos >(Arena* arena) {
   return Arena::CreateInternal< ::corepb::GenesisConsensusDpos >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::corepb::GenesisTokenDistribution* Arena::CreateMaybeMessage< ::corepb::GenesisTokenDistribution >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::corepb::GenesisTokenDistribution* Arena::CreateMaybeMessage< ::corepb::GenesisTokenDistribution >(Arena* arena) {
   return Arena::CreateInternal< ::corepb::GenesisTokenDistribution >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

@@ -5,173 +5,139 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_dynasty_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_dynasty_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DynastyCandidate;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_dynasty_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DynastyMeta;
-}  // namespace protobuf_dynasty_2eproto
+#include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_dynasty_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DynastyCandidate_dynasty_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dynasty_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DynastyMeta_dynasty_2eproto;
 namespace corepb {
 class DynastyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Dynasty>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Dynasty> _instance;
 } _Dynasty_default_instance_;
 class DynastyMetaDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<DynastyMeta>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DynastyMeta> _instance;
 } _DynastyMeta_default_instance_;
 class DynastyCandidateDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<DynastyCandidate>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DynastyCandidate> _instance;
 } _DynastyCandidate_default_instance_;
 }  // namespace corepb
-namespace protobuf_dynasty_2eproto {
-static void InitDefaultsDynasty() {
+static void InitDefaultsscc_info_Dynasty_dynasty_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::corepb::_Dynasty_default_instance_;
     new (ptr) ::corepb::Dynasty();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::corepb::Dynasty::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_Dynasty =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsDynasty}, {
-      &protobuf_dynasty_2eproto::scc_info_DynastyMeta.base,
-      &protobuf_dynasty_2eproto::scc_info_DynastyCandidate.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Dynasty_dynasty_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Dynasty_dynasty_2eproto}, {
+      &scc_info_DynastyMeta_dynasty_2eproto.base,
+      &scc_info_DynastyCandidate_dynasty_2eproto.base,}};
 
-static void InitDefaultsDynastyMeta() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::corepb::_DynastyMeta_default_instance_;
-    new (ptr) ::corepb::DynastyMeta();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::corepb::DynastyMeta::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_DynastyMeta =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDynastyMeta}, {}};
-
-static void InitDefaultsDynastyCandidate() {
+static void InitDefaultsscc_info_DynastyCandidate_dynasty_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::corepb::_DynastyCandidate_default_instance_;
     new (ptr) ::corepb::DynastyCandidate();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::corepb::DynastyCandidate::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_DynastyCandidate =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDynastyCandidate}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DynastyCandidate_dynasty_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DynastyCandidate_dynasty_2eproto}, {}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Dynasty.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_DynastyMeta.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_DynastyCandidate.base);
+static void InitDefaultsscc_info_DynastyMeta_dynasty_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::corepb::_DynastyMeta_default_instance_;
+    new (ptr) ::corepb::DynastyMeta();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::corepb::DynastyMeta::InitAsDefaultInstance();
 }
 
-::google::protobuf::Metadata file_level_metadata[3];
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DynastyMeta_dynasty_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DynastyMeta_dynasty_2eproto}, {}};
 
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_dynasty_2eproto[3];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_dynasty_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_dynasty_2eproto = nullptr;
+
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dynasty_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::Dynasty, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::corepb::Dynasty, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::Dynasty, meta_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::Dynasty, candidate_),
+  PROTOBUF_FIELD_OFFSET(::corepb::Dynasty, meta_),
+  PROTOBUF_FIELD_OFFSET(::corepb::Dynasty, candidate_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::DynastyMeta, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::corepb::DynastyMeta, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::DynastyMeta, chain_id_),
+  PROTOBUF_FIELD_OFFSET(::corepb::DynastyMeta, chain_id_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::DynastyCandidate, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::corepb::DynastyCandidate, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::DynastyCandidate, serial_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::corepb::DynastyCandidate, dynasty_),
+  PROTOBUF_FIELD_OFFSET(::corepb::DynastyCandidate, serial_),
+  PROTOBUF_FIELD_OFFSET(::corepb::DynastyCandidate, dynasty_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::corepb::Dynasty)},
   { 7, -1, sizeof(::corepb::DynastyMeta)},
   { 13, -1, sizeof(::corepb::DynastyCandidate)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::corepb::_Dynasty_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::corepb::_DynastyMeta_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::corepb::_DynastyCandidate_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::corepb::_Dynasty_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::corepb::_DynastyMeta_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::corepb::_DynastyCandidate_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "dynasty.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_dynasty_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\rdynasty.proto\022\006corepb\"Y\n\007Dynasty\022!\n\004me"
+  "ta\030\001 \001(\0132\023.corepb.DynastyMeta\022+\n\tcandida"
+  "te\030\002 \003(\0132\030.corepb.DynastyCandidate\"\037\n\013Dy"
+  "nastyMeta\022\020\n\010chain_id\030\001 \001(\r\"3\n\020DynastyCa"
+  "ndidate\022\016\n\006serial\030\001 \001(\004\022\017\n\007dynasty\030\002 \003(\t"
+  "b\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_dynasty_2eproto_deps[1] = {
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dynasty_2eproto_sccs[3] = {
+  &scc_info_Dynasty_dynasty_2eproto.base,
+  &scc_info_DynastyCandidate_dynasty_2eproto.base,
+  &scc_info_DynastyMeta_dynasty_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_dynasty_2eproto_once;
+static bool descriptor_table_dynasty_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_dynasty_2eproto = {
+  &descriptor_table_dynasty_2eproto_initialized, descriptor_table_protodef_dynasty_2eproto, "dynasty.proto", 208,
+  &descriptor_table_dynasty_2eproto_once, descriptor_table_dynasty_2eproto_sccs, descriptor_table_dynasty_2eproto_deps, 3, 0,
+  schemas, file_default_instances, TableStruct_dynasty_2eproto::offsets,
+  file_level_metadata_dynasty_2eproto, 3, file_level_enum_descriptors_dynasty_2eproto, file_level_service_descriptors_dynasty_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 3);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\rdynasty.proto\022\006corepb\"Y\n\007Dynasty\022!\n\004me"
-      "ta\030\001 \001(\0132\023.corepb.DynastyMeta\022+\n\tcandida"
-      "te\030\002 \003(\0132\030.corepb.DynastyCandidate\"\037\n\013Dy"
-      "nastyMeta\022\020\n\010chain_id\030\001 \001(\r\"3\n\020DynastyCa"
-      "ndidate\022\016\n\006serial\030\001 \001(\004\022\017\n\007dynasty\030\002 \003(\t"
-      "b\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 208);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "dynasty.proto", &protobuf_RegisterTypes);
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_dynasty_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_dynasty_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_dynasty_2eproto)), true);
 namespace corepb {
 
 // ===================================================================
@@ -180,33 +146,36 @@ void Dynasty::InitAsDefaultInstance() {
   ::corepb::_Dynasty_default_instance_._instance.get_mutable()->meta_ = const_cast< ::corepb::DynastyMeta*>(
       ::corepb::DynastyMeta::internal_default_instance());
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Dynasty::kMetaFieldNumber;
-const int Dynasty::kCandidateFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Dynasty::_Internal {
+ public:
+  static const ::corepb::DynastyMeta& meta(const Dynasty* msg);
+};
 
+const ::corepb::DynastyMeta&
+Dynasty::_Internal::meta(const Dynasty* msg) {
+  return *msg->meta_;
+}
 Dynasty::Dynasty()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_dynasty_2eproto::scc_info_Dynasty.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:corepb.Dynasty)
 }
 Dynasty::Dynasty(const Dynasty& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       candidate_(from.candidate_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_meta()) {
+  if (from._internal_has_meta()) {
     meta_ = new ::corepb::DynastyMeta(*from.meta_);
   } else {
-    meta_ = NULL;
+    meta_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:corepb.Dynasty)
 }
 
 void Dynasty::SharedCtor() {
-  meta_ = NULL;
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Dynasty_dynasty_2eproto.base);
+  meta_ = nullptr;
 }
 
 Dynasty::~Dynasty() {
@@ -221,138 +190,97 @@ void Dynasty::SharedDtor() {
 void Dynasty::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Dynasty::descriptor() {
-  ::protobuf_dynasty_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_dynasty_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Dynasty& Dynasty::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_dynasty_2eproto::scc_info_Dynasty.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Dynasty_dynasty_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void Dynasty::Clear() {
 // @@protoc_insertion_point(message_clear_start:corepb.Dynasty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   candidate_.Clear();
-  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && meta_ != nullptr) {
     delete meta_;
   }
-  meta_ = NULL;
+  meta_ = nullptr;
   _internal_metadata_.Clear();
 }
 
-bool Dynasty::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:corepb.Dynasty)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* Dynasty::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // .corepb.DynastyMeta meta = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_meta()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_meta(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // repeated .corepb.DynastyCandidate candidate = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_candidate()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_candidate(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:corepb.Dynasty)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:corepb.Dynasty)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void Dynasty::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:corepb.Dynasty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .corepb.DynastyMeta meta = 1;
-  if (this->has_meta()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_meta(), output);
-  }
-
-  // repeated .corepb.DynastyCandidate candidate = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->candidate_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->candidate(static_cast<int>(i)),
-      output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:corepb.Dynasty)
-}
-
-::google::protobuf::uint8* Dynasty::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* Dynasty::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:corepb.Dynasty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .corepb.DynastyMeta meta = 1;
   if (this->has_meta()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_meta(), deterministic, target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::meta(this), target, stream);
   }
 
   // repeated .corepb.DynastyCandidate candidate = 2;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->candidate_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->candidate(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_candidate_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_candidate(i), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:corepb.Dynasty)
   return target;
@@ -362,43 +290,42 @@ size_t Dynasty::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:corepb.Dynasty)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .corepb.DynastyCandidate candidate = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->candidate_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->candidate(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_candidate_size();
+  for (const auto& msg : this->candidate_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // .corepb.DynastyMeta meta = 1;
   if (this->has_meta()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *meta_);
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void Dynasty::MergeFrom(const ::google::protobuf::Message& from) {
+void Dynasty::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:corepb.Dynasty)
   GOOGLE_DCHECK_NE(&from, this);
   const Dynasty* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Dynasty>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Dynasty>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:corepb.Dynasty)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:corepb.Dynasty)
     MergeFrom(*source);
@@ -409,16 +336,16 @@ void Dynasty::MergeFrom(const Dynasty& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:corepb.Dynasty)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   candidate_.MergeFrom(from.candidate_);
   if (from.has_meta()) {
-    mutable_meta()->::corepb::DynastyMeta::MergeFrom(from.meta());
+    _internal_mutable_meta()->::corepb::DynastyMeta::MergeFrom(from._internal_meta());
   }
 }
 
-void Dynasty::CopyFrom(const ::google::protobuf::Message& from) {
+void Dynasty::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:corepb.Dynasty)
   if (&from == this) return;
   Clear();
@@ -436,20 +363,15 @@ bool Dynasty::IsInitialized() const {
   return true;
 }
 
-void Dynasty::Swap(Dynasty* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Dynasty::InternalSwap(Dynasty* other) {
   using std::swap;
-  CastToBase(&candidate_)->InternalSwap(CastToBase(&other->candidate_));
-  swap(meta_, other->meta_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  candidate_.InternalSwap(&other->candidate_);
+  swap(meta_, other->meta_);
 }
 
-::google::protobuf::Metadata Dynasty::GetMetadata() const {
-  protobuf_dynasty_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_dynasty_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Dynasty::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -457,20 +379,18 @@ void Dynasty::InternalSwap(Dynasty* other) {
 
 void DynastyMeta::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DynastyMeta::kChainIdFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class DynastyMeta::_Internal {
+ public:
+};
 
 DynastyMeta::DynastyMeta()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_dynasty_2eproto::scc_info_DynastyMeta.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:corepb.DynastyMeta)
 }
 DynastyMeta::DynastyMeta(const DynastyMeta& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   chain_id_ = from.chain_id_;
   // @@protoc_insertion_point(copy_constructor:corepb.DynastyMeta)
@@ -491,20 +411,15 @@ void DynastyMeta::SharedDtor() {
 void DynastyMeta::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* DynastyMeta::descriptor() {
-  ::protobuf_dynasty_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_dynasty_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const DynastyMeta& DynastyMeta::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_dynasty_2eproto::scc_info_DynastyMeta.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DynastyMeta_dynasty_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void DynastyMeta::Clear() {
 // @@protoc_insertion_point(message_clear_start:corepb.DynastyMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -512,83 +427,55 @@ void DynastyMeta::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool DynastyMeta::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:corepb.DynastyMeta)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* DynastyMeta::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 chain_id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &chain_id_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          chain_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:corepb.DynastyMeta)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:corepb.DynastyMeta)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void DynastyMeta::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:corepb.DynastyMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 chain_id = 1;
-  if (this->chain_id() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->chain_id(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:corepb.DynastyMeta)
-}
-
-::google::protobuf::uint8* DynastyMeta::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* DynastyMeta::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:corepb.DynastyMeta)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 chain_id = 1;
   if (this->chain_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->chain_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_chain_id(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:corepb.DynastyMeta)
   return target;
@@ -598,32 +485,35 @@ size_t DynastyMeta::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:corepb.DynastyMeta)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 chain_id = 1;
   if (this->chain_id() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->chain_id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_chain_id());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void DynastyMeta::MergeFrom(const ::google::protobuf::Message& from) {
+void DynastyMeta::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:corepb.DynastyMeta)
   GOOGLE_DCHECK_NE(&from, this);
   const DynastyMeta* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const DynastyMeta>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DynastyMeta>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:corepb.DynastyMeta)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:corepb.DynastyMeta)
     MergeFrom(*source);
@@ -634,15 +524,15 @@ void DynastyMeta::MergeFrom(const DynastyMeta& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:corepb.DynastyMeta)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.chain_id() != 0) {
-    set_chain_id(from.chain_id());
+    _internal_set_chain_id(from._internal_chain_id());
   }
 }
 
-void DynastyMeta::CopyFrom(const ::google::protobuf::Message& from) {
+void DynastyMeta::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:corepb.DynastyMeta)
   if (&from == this) return;
   Clear();
@@ -660,19 +550,14 @@ bool DynastyMeta::IsInitialized() const {
   return true;
 }
 
-void DynastyMeta::Swap(DynastyMeta* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void DynastyMeta::InternalSwap(DynastyMeta* other) {
   using std::swap;
-  swap(chain_id_, other->chain_id_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(chain_id_, other->chain_id_);
 }
 
-::google::protobuf::Metadata DynastyMeta::GetMetadata() const {
-  protobuf_dynasty_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_dynasty_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata DynastyMeta::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -680,21 +565,18 @@ void DynastyMeta::InternalSwap(DynastyMeta* other) {
 
 void DynastyCandidate::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DynastyCandidate::kSerialFieldNumber;
-const int DynastyCandidate::kDynastyFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class DynastyCandidate::_Internal {
+ public:
+};
 
 DynastyCandidate::DynastyCandidate()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_dynasty_2eproto::scc_info_DynastyCandidate.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:corepb.DynastyCandidate)
 }
 DynastyCandidate::DynastyCandidate(const DynastyCandidate& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       dynasty_(from.dynasty_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   serial_ = from.serial_;
@@ -702,7 +584,8 @@ DynastyCandidate::DynastyCandidate(const DynastyCandidate& from)
 }
 
 void DynastyCandidate::SharedCtor() {
-  serial_ = GOOGLE_ULONGLONG(0);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DynastyCandidate_dynasty_2eproto.base);
+  serial_ = PROTOBUF_ULONGLONG(0);
 }
 
 DynastyCandidate::~DynastyCandidate() {
@@ -716,142 +599,96 @@ void DynastyCandidate::SharedDtor() {
 void DynastyCandidate::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* DynastyCandidate::descriptor() {
-  ::protobuf_dynasty_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_dynasty_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const DynastyCandidate& DynastyCandidate::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_dynasty_2eproto::scc_info_DynastyCandidate.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DynastyCandidate_dynasty_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void DynastyCandidate::Clear() {
 // @@protoc_insertion_point(message_clear_start:corepb.DynastyCandidate)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   dynasty_.Clear();
-  serial_ = GOOGLE_ULONGLONG(0);
+  serial_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear();
 }
 
-bool DynastyCandidate::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:corepb.DynastyCandidate)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* DynastyCandidate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 serial = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &serial_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          serial_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // repeated string dynasty = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_dynasty()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->dynasty(this->dynasty_size() - 1).data(),
-            static_cast<int>(this->dynasty(this->dynasty_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "corepb.DynastyCandidate.dynasty"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_dynasty();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "corepb.DynastyCandidate.dynasty"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:corepb.DynastyCandidate)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:corepb.DynastyCandidate)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void DynastyCandidate::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:corepb.DynastyCandidate)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 serial = 1;
-  if (this->serial() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->serial(), output);
-  }
-
-  // repeated string dynasty = 2;
-  for (int i = 0, n = this->dynasty_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->dynasty(i).data(), static_cast<int>(this->dynasty(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "corepb.DynastyCandidate.dynasty");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      2, this->dynasty(i), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:corepb.DynastyCandidate)
-}
-
-::google::protobuf::uint8* DynastyCandidate::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* DynastyCandidate::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:corepb.DynastyCandidate)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 serial = 1;
   if (this->serial() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->serial(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_serial(), target);
   }
 
   // repeated string dynasty = 2;
-  for (int i = 0, n = this->dynasty_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->dynasty(i).data(), static_cast<int>(this->dynasty(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+  for (int i = 0, n = this->_internal_dynasty_size(); i < n; i++) {
+    const auto& s = this->_internal_dynasty(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "corepb.DynastyCandidate.dynasty");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(2, this->dynasty(i), target);
+    target = stream->WriteString(2, s, target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:corepb.DynastyCandidate)
   return target;
@@ -861,40 +698,43 @@ size_t DynastyCandidate::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:corepb.DynastyCandidate)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated string dynasty = 2;
   total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->dynasty_size());
-  for (int i = 0, n = this->dynasty_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->dynasty(i));
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(dynasty_.size());
+  for (int i = 0, n = dynasty_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      dynasty_.Get(i));
   }
 
   // uint64 serial = 1;
   if (this->serial() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->serial());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_serial());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void DynastyCandidate::MergeFrom(const ::google::protobuf::Message& from) {
+void DynastyCandidate::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:corepb.DynastyCandidate)
   GOOGLE_DCHECK_NE(&from, this);
   const DynastyCandidate* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const DynastyCandidate>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DynastyCandidate>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:corepb.DynastyCandidate)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:corepb.DynastyCandidate)
     MergeFrom(*source);
@@ -905,16 +745,16 @@ void DynastyCandidate::MergeFrom(const DynastyCandidate& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:corepb.DynastyCandidate)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   dynasty_.MergeFrom(from.dynasty_);
   if (from.serial() != 0) {
-    set_serial(from.serial());
+    _internal_set_serial(from._internal_serial());
   }
 }
 
-void DynastyCandidate::CopyFrom(const ::google::protobuf::Message& from) {
+void DynastyCandidate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:corepb.DynastyCandidate)
   if (&from == this) return;
   Clear();
@@ -932,37 +772,31 @@ bool DynastyCandidate::IsInitialized() const {
   return true;
 }
 
-void DynastyCandidate::Swap(DynastyCandidate* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void DynastyCandidate::InternalSwap(DynastyCandidate* other) {
   using std::swap;
-  dynasty_.InternalSwap(CastToBase(&other->dynasty_));
-  swap(serial_, other->serial_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  dynasty_.InternalSwap(&other->dynasty_);
+  swap(serial_, other->serial_);
 }
 
-::google::protobuf::Metadata DynastyCandidate::GetMetadata() const {
-  protobuf_dynasty_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_dynasty_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata DynastyCandidate::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace corepb
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::corepb::Dynasty* Arena::CreateMaybeMessage< ::corepb::Dynasty >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::corepb::Dynasty* Arena::CreateMaybeMessage< ::corepb::Dynasty >(Arena* arena) {
   return Arena::CreateInternal< ::corepb::Dynasty >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::corepb::DynastyMeta* Arena::CreateMaybeMessage< ::corepb::DynastyMeta >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::corepb::DynastyMeta* Arena::CreateMaybeMessage< ::corepb::DynastyMeta >(Arena* arena) {
   return Arena::CreateInternal< ::corepb::DynastyMeta >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::corepb::DynastyCandidate* Arena::CreateMaybeMessage< ::corepb::DynastyCandidate >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::corepb::DynastyCandidate* Arena::CreateMaybeMessage< ::corepb::DynastyCandidate >(Arena* arena) {
   return Arena::CreateInternal< ::corepb::DynastyCandidate >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

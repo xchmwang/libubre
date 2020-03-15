@@ -20,12 +20,12 @@
 CUR_DIR="$( pwd )"
 #CUR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}"  )" >/dev/null && pwd  )"
 #cd $CUR_DIR/fs/proto
-cp ../../../core/pb/block.proto ./
-cp ../../../core/pb/dynasty.proto ./
-cp ../../../core/pb/genesis.proto ./
-cp ../../../consensus/pb/state.proto ./
-cp ../../../common/dag/pb/dag.proto ./
-cp ../../../common/trie/pb/trie.proto ./
+#cp ../../../core/pb/block.proto ./
+#cp ../../../core/pb/dynasty.proto ./
+#cp ../../../core/pb/genesis.proto ./
+#cp ../../../consensus/pb/state.proto ./
+#cp ../../../common/dag/pb/dag.proto ./
+#cp ../../../common/trie/pb/trie.proto ./
 
 patch < block.proto.patch
 
