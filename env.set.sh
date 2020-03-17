@@ -19,10 +19,10 @@ case "$(uname -s)" in
 esac
 
 USER=`whoami`
-NEBULAS_HOME=$CUR_DIR/../
+NEBULAS_HOME=$CUR_DIR
 
-export NBRE_ROOT_DIR=$NEBULAS_HOME/nbre
-export NBRE_EXE_NAME=$NBRE_ROOT_DIR/nbre
+export NBRE_ROOT_DIR=$NEBULAS_HOME
+export NBRE_EXE_NAME=$NBRE_ROOT_DIR/bin/nbre
 export NEB_DB_DIR=$NEBULAS_HOME/data.db
 export NBRE_DB_DIR=$NBRE_ROOT_DIR/nbre.db
 export NBRE_LOG_DIR=$NBRE_ROOT_DIR/logs

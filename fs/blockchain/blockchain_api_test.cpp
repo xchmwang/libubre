@@ -18,7 +18,6 @@
 // <http://www.gnu.org/licenses/>.
 //
 #include "fs/blockchain/blockchain_api_test.h"
-#include "common/nebulas_currency.h"
 #include "fs/blockchain.h"
 #include "util/bc_generator.h"
 

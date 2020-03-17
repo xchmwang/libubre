@@ -22,7 +22,6 @@
 #include "common/common.h"
 #include "common/configuration.h"
 #include "common/int128_conversion.h"
-#include "common/nebulas_currency.h"
 #include "fs/blockchain/blockchain_api_test.h"
 #include "runtime/nr/impl/nebulas_rank.h"
 
