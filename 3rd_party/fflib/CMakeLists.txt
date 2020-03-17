@@ -10,9 +10,9 @@ add_definitions(-DNDEBUG)
 
 include_directories(/usr/local/include)
 include_directories(${PROJECT_SOURCE_DIR}/include)
-find_package(Boost REQUIRED)
-include_directories(${Boost_INCLUDE_DIRS})
-link_directories(${Boost_LIBRARY_DIRS})
+#find_package(Boost REQUIRED)
+#include_directories(${Boost_INCLUDE_DIRS})
+#link_directories(${Boost_LIBRARY_DIRS})
 link_directories(/usr/local/lib)
 
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
@@ -43,8 +43,18 @@ set_target_properties(functionflow_static  PROPERTIES OUTPUT_NAME "ff_functionfl
 
 add_library(net_dynamic SHARED ${net_src})
 add_library(net_static STATIC ${net_src})
-target_link_libraries(net_dynamic boost_program_options boost_system)
-target_link_libraries(net_static boost_program_options boost_system)
+
+set(Boost_DYNAMIC_LIBRARIES
+  ${PROJECT_SOURCE_DIR}/../../lib/lib/libboost_program_options.so
+  ${PROJECT_SOURCE_DIR}/../../lib/lib/libboost_system.so
+  )
+set(Boost_STATIC_LIBRARIES
+  ${PROJECT_SOURCE_DIR}/../../lib/lib/libboost_program_options.a
+  ${PROJECT_SOURCE_DIR}/../../lib/lib/libboost_system.a
+  )
+include_directories(${PROJECT_SOURCE_DIR}/../../lib/include)
+target_link_libraries(net_dynamic ${Boost_DYNAMIC_LIBRARIES})
+target_link_libraries(net_static ${Boost_STATIC_LIBRARIES})
 set_target_properties(net_dynamic PROPERTIES OUTPUT_NAME "ff_net")
 set_target_properties(net_static  PROPERTIES OUTPUT_NAME "ff_net")
 

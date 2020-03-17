@@ -57,8 +57,8 @@ net_tcp_server::net_tcp_server(io_service &ioservice, pkg_packer *bs,
     : tcp_server(ioservice, bs, eh, rph, ep), m_oAcceptor(ioservice, ep) {}
 
 void net_tcp_server::start_accept() {
-  auto pn = std::make_shared<net_tcp_connection>(m_oAcceptor.get_io_service(),
-                                                 m_pBS, m_pEH, m_pRPH, this);
+  auto pn = std::make_shared<net_tcp_connection>(m_oIOService, m_pBS, m_pEH,
+                                                 m_pRPH, this);
   tcp_connection_base_ptr pNewConn =
       std::dynamic_pointer_cast<tcp_connection_base>(pn);
   net_tcp_connection *ntc = static_cast<net_tcp_connection *>(pNewConn.get());

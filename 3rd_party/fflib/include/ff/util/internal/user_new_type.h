@@ -67,5 +67,4 @@ template <> struct nt_extract_content_type_list<type_list<>> {
   template <> struct ::ff::util::nt_traits<_name> {                            \
     constexpr static const char *name = _tname;                                \
     typedef _dtype type;                                                       \
-  };                                                                           \
-  \
+  };
