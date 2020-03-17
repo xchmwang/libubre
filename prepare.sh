@@ -229,11 +229,11 @@ check_install_llvm() {
 
 check_install_boost() {
   cd $CUR_DIR/3rd_party
-  if [ ! -d "boost_1_67_0"  ]; then
-    tar -zxvf boost_1_67_0.tar.gz
+  if [ ! -d "boost_1_70_0"  ]; then
+    tar -zxvf boost_1_70_0.tar.gz
   fi
   if [ ! -e $CUR_DIR/lib/lib/libboost_system.$DYLIB ]; then
-    cd boost_1_67_0
+    cd boost_1_70_0
     ./bootstrap.sh --with-toolset=clang --prefix=$CUR_DIR/lib/
     ./b2 clean
     ./b2 toolset=clang --with-date_time --with-graph --with-program_options --with-filesystem --with-system --with-thread -j$PARALLEL
