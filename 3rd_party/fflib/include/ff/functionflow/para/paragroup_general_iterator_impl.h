@@ -3,8 +3,8 @@
 
 template <class Iterator_t, class Functor_t>
 static void for_each_impl_general_iterator(Iterator_t begin, Iterator_t end,
-                                           Functor_t&& f, Entities_t& es,
-                                           auto_partitioner* p) {
+                                           Functor_t &&f, Entities_t &es,
+                                           auto_partitioner *) {
   // use a divide-and-conquer method to do for_each
   size_t divide_times = static_cast<int>(log2(ff::rt::concurrency()));
   uint64_t count = 0;
@@ -45,7 +45,8 @@ static void for_each_impl_general_iterator_auto_partition(
   }
 
   es->lock.lock();
-  for (int i = 0; i < lgroup.size(); ++i) es->entities.push_back(lgroup[i]);
+  for (size_t i = 0; i < lgroup.size(); ++i)
+    es->entities.push_back(lgroup[i]);
   es->lock.unlock();
   while (t != end) {
     f(t);
@@ -55,8 +56,8 @@ static void for_each_impl_general_iterator_auto_partition(
 
 template <class Iterator_t, class Functor_t>
 static void for_each_impl_general_iterator(Iterator_t begin, Iterator_t end,
-                                           Functor_t&& f, Entities_t& es,
-                                           simple_partitioner* p) {
+                                           Functor_t &&f, Entities_t &es,
+                                           simple_partitioner *) {
   ff::thrd_id_t this_id = ff::rt::get_thrd_id();
   size_t concurrency = ff::rt::concurrency();  // TODO(A.A) this may be optimal.
   // TODO(A.A) we may have another partition approach!

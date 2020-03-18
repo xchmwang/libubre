@@ -101,7 +101,7 @@ archive(std::vector<T> &data) {
     break;
   case deseralizer:
     data.clear();
-    for (int i = 0; i < count; ++i) {
+    for (size_t i = 0; i < count; ++i) {
       T d;
       archive(d);
       data.push_back(d);
@@ -126,7 +126,7 @@ archive(std::vector<T> &data) {
     break;
   case deseralizer:
     data.clear();
-    for (int i = 0; i < count; ++i) {
+    for (size_t i = 0; i < count; ++i) {
       T d;
       archive(d);
       data.push_back(d);

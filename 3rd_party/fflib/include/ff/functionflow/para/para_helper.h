@@ -66,7 +66,7 @@ class para_accepted_call {
   }
 
   template <class FT>
-  auto then(FT&& f) ->
+  auto then(FT &&) ->
       typename std::enable_if<is_callable<FT>::value &&
                                   !is_function_with_arg_type<FT, RT>::value,
                               void>::type {
@@ -75,20 +75,18 @@ class para_accepted_call {
   }
 
   template <class FT>
-  auto then(FT&& f) ->
+  auto then(FT &&) ->
       typename std::enable_if<!is_callable<FT>::value, void>::type {
     static_assert(Please_Check_The_Assert_Msg<FT>::value,
                   FF_EM_THEN_WITH_NON_FUNC_TYPE);
   }
 
-  template <class T>
-  void operator[](T&& t) {
+  template <class T> void operator[](T &&) {
     static_assert(Please_Check_The_Assert_Msg<T>::value,
                   FF_EM_CALL_SQPAREN_AFTER_PAREN);
   }
 
-  template <class T>
-  void operator()(T&& t) {
+  template <class T> void operator()(T &&) {
     static_assert(Please_Check_The_Assert_Msg<T>::value,
                   FF_EM_CALL_PAREN_AFTER_PAREN);
   }
@@ -126,7 +124,7 @@ class para_accepted_call<PT, void> {
   }
 
   template <class FT>
-  auto then(FT&& f) ->
+  auto then(FT &&) ->
       typename std::enable_if<is_callable<FT>::value &&
                                   !is_function_with_arg_type<FT, void>::value,
                               void>::type {
@@ -135,20 +133,18 @@ class para_accepted_call<PT, void> {
   }
 
   template <class FT>
-  auto then(FT&& f) ->
+  auto then(FT &&) ->
       typename std::enable_if<!is_callable<FT>::value, void>::type {
     static_assert(Please_Check_The_Assert_Msg<FT>::value,
                   FF_EM_THEN_WITH_NON_FUNC_TYPE);
   }
 
-  template <class T>
-  void operator[](T&& t) {
+  template <class T> void operator[](T &&) {
     static_assert(Please_Check_The_Assert_Msg<T>::value,
                   FF_EM_CALL_SQPAREN_AFTER_PAREN);
   }
 
-  template <class T>
-  void operator()(T&& t) {
+  template <class T> void operator()(T &&) {
     static_assert(Please_Check_The_Assert_Msg<T>::value,
                   FF_EM_CALL_PAREN_AFTER_PAREN);
   }

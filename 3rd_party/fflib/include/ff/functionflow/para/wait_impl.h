@@ -94,7 +94,7 @@ class wait_and {
   }
 
   template <class FT>
-  auto then(FT &&f) -> typename std::enable_if<
+  auto then(FT &&) -> typename std::enable_if<
       !util::function_args_traits<FT>::is_no_args &&
           !is_compatible_then<FT, RT1_t, RT2_t>::is_cpt_with_and,
       typename std::remove_reference<
@@ -221,7 +221,7 @@ class wait_or {
   }
 
   template <class FT>
-  auto then(FT &&f) -> typename std::enable_if<
+  auto then(FT &&) -> typename std::enable_if<
       !util::is_no_args_function<FT>::value &&
           !is_compatible_then<FT, RT1_t, RT2_t>::is_cpt_with_or,
       typename std::remove_reference<

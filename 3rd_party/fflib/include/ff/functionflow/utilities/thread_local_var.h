@@ -36,7 +36,7 @@ class thread_local_var {
       m_oVars.push_back(T());
     }
   }
-  thread_local_var(const T& t) {
+  thread_local_var(const T &) {
     for (size_t i = 0; i < rt::concurrency(); ++i) {
       m_oVars.push_back(T());
     }
@@ -68,14 +68,14 @@ class thread_local_var {
   }
 
   template <typename F>
-  auto for_each(F &&f) ->
+  auto for_each(F &&) ->
       typename std::enable_if<!util::is_callable<F>::value, void>::type {
     static_assert(Please_Check_The_Assert_Msg<F>::value,
                   FF_EM_CALL_FOR_EACH_WITH_NO_FUNC);
   }
 
   template <typename F>
-  auto for_each(F &&f) ->
+  auto for_each(F &&) ->
       typename std::enable_if<util::is_callable<F>::value &&
                                   !util::is_function_with_arg_type<F, T>::value,
                               void>::type {

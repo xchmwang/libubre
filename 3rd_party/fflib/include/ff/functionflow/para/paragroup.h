@@ -188,7 +188,7 @@ class paragroup {
   }
 
   template <class Iterator_t, class Functor_t>
-  auto for_each(Iterator_t begin, Iterator_t end, Functor_t &&f) ->
+  auto for_each(Iterator_t, Iterator_t, Functor_t &&) ->
       typename std::enable_if<
           !ff::util::is_callable<Functor_t>::value,
           ::ff::internal::para_accepted_call<paragroup, void>>::type {
@@ -197,20 +197,19 @@ class paragroup {
   }
 
   template <class Iterator_t, class Functor_t>
-  auto for_each(Iterator_t begin, Iterator_t end, Functor_t &&f) ->
-      typename std::enable_if<
-          ff::util::is_callable<Functor_t>::value &&
-              std::is_arithmetic<
-                  typename std::remove_cv<Iterator_t>::type>::value &&
-              !ff::util::is_function_with_arg_type<Functor_t,
-                                                   Iterator_t>::value,
-          ::ff::internal::para_accepted_call<paragroup, void>>::type {
+  auto
+  for_each(Iterator_t, Iterator_t, Functor_t &&) -> typename std::enable_if<
+      ff::util::is_callable<Functor_t>::value &&
+          std::is_arithmetic<
+              typename std::remove_cv<Iterator_t>::type>::value &&
+          !ff::util::is_function_with_arg_type<Functor_t, Iterator_t>::value,
+      ::ff::internal::para_accepted_call<paragroup, void>>::type {
     static_assert(Please_Check_The_Assert_Msg<Functor_t>::value,
                   FF_EM_CALL_FOR_EACH_WRONG_FUNCTION);
   }
 
   template <class Iterator_t, class Functor_t>
-  auto for_each(Iterator_t begin, Iterator_t end, Functor_t &&f) ->
+  auto for_each(Iterator_t, Iterator_t, Functor_t &&) ->
       typename std::enable_if<
           ff::util::is_callable<Functor_t>::value &&
               !ff::util::is_function_with_arg_type<
@@ -222,8 +221,7 @@ class paragroup {
   }
 
   void clear() { m_pEntities.reset(); }
-  template <class T>
-  void add(T &&t) {
+  template <class T> void add(T &&) {
     static_assert(Please_Check_The_Assert_Msg<T>::value,
                   FF_EM_USE_PARACONTAINER_INSTEAD_OF_GROUP);
   }

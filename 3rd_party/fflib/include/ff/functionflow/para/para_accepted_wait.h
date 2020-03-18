@@ -51,7 +51,7 @@ class para_accepted_wait {
   }
 
   template <class F> // for f is not a function
-  auto operator()(F &&f) -> typename std::enable_if<
+  auto operator()(F &&) -> typename std::enable_if<
       !util::is_callable<F>::value,
       ::ff::internal::para_accepted_call<PT, ret_type>>::type {
     static_assert(Please_Check_The_Assert_Msg<F>::value,
@@ -59,7 +59,7 @@ class para_accepted_wait {
   }
 
   template <class F> // for f with invalid params
-  auto operator()(F &&f) -> typename std::enable_if<
+  auto operator()(F &&) -> typename std::enable_if<
       util::is_callable<F>::value &&
           std::is_same<ret_type, typename util::function_res_traits<
                                      F>::ret_type>::value &&
@@ -70,7 +70,7 @@ class para_accepted_wait {
   }
 
   template <class F> // for f with invalid ret
-  auto operator()(F &&f) -> typename std::enable_if<
+  auto operator()(F &&) -> typename std::enable_if<
       util::is_callable<F>::value &&
           !std::is_same<ret_type,
                         typename util::function_res_traits<F>::ret_type>::value,
@@ -79,8 +79,7 @@ class para_accepted_wait {
                   FF_EM_CALL_PAREN_WITH_WRONG_RET);
   }
 
-  template <class F>
-  void then(F &&f) {
+  template <class F> void then(F &&) {
     static_assert(Please_Check_The_Assert_Msg<F>::value,
                   FF_EM_CALL_THEN_WITHOUT_CALL_PAREN);
   }

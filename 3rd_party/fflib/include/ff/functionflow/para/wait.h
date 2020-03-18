@@ -53,7 +53,7 @@ auto operator||(T1 &&t1, T2 &&t2) -> typename std::enable_if<
 }
 
 template <class T1, class T2>
-auto operator&&(T1 &&t1, T2 &&t2) -> typename std::enable_if<
+auto operator&&(T1 &&, T2 &&) -> typename std::enable_if<
     (!is_para_or_wait<typename std::remove_reference<T1>::type>::value &&
      is_para_or_wait<typename std::remove_reference<T2>::type>::value) ||
         (is_para_or_wait<typename std::remove_reference<T1>::type>::value &&
@@ -64,7 +64,7 @@ auto operator&&(T1 &&t1, T2 &&t2) -> typename std::enable_if<
 }
 
 template <class T1, class T2>
-auto operator||(T1 &&t1, T2 &&t2) -> typename std::enable_if<
+auto operator||(T1 &&, T2 &&) -> typename std::enable_if<
     (!is_para_or_wait<typename std::remove_reference<T1>::type>::value &&
      is_para_or_wait<typename std::remove_reference<T2>::type>::value) ||
         (is_para_or_wait<typename std::remove_reference<T1>::type>::value &&

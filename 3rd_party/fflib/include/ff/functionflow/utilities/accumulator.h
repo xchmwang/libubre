@@ -41,7 +41,7 @@ class accumulator {
   accumulator(const T &value, FT &&functor)
       : m_oValue(std::move(value)), Functor(std::move(functor)) {
     assert(is_initialized() && "Call ff::initialize() first!");
-    for (int i = 0; i < ::ff::rt::concurrency(); ++i) {
+    for (size_t i = 0; i < ::ff::rt::concurrency(); ++i) {
       m_pAllValues.push_back(new T(value));
     }
   }
@@ -50,7 +50,7 @@ class accumulator {
   accumulator(FT &&functor)
       : m_oValue(), Functor(std::move(functor)) {
     assert(is_initialized() && "Call ff::initialize() first!");
-    for (int i = 0; i < ::ff::rt::concurrency(); ++i) {
+    for (size_t i = 0; i < ::ff::rt::concurrency(); ++i) {
       m_pAllValues.push_back(new T());
     }
   }

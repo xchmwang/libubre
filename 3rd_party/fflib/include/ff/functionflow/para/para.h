@@ -55,7 +55,7 @@ class para_common {
                                        std::forward<WT>(cond));
    }
    template <class WT>
-   auto operator[](WT &&cond) -> typename std::enable_if<
+   auto operator[](WT &&) -> typename std::enable_if<
        !is_para_or_wait<typename std::remove_reference<WT>::type>::value,
        para_accepted_wait<DT, para<void>>>::type {
      static_assert(Please_Check_The_Assert_Msg<WT>::value,
@@ -78,7 +78,7 @@ class para_common {
    }
 
    template <class F>
-   auto operator()(F &&f) -> typename std::enable_if<
+   auto operator()(F &&) -> typename std::enable_if<
        !std::is_same<typename ::ff::util::function_res_traits<F>::ret_type,
                      ret_type>::value,
        para_accepted_call<DT, ret_type>>::type {

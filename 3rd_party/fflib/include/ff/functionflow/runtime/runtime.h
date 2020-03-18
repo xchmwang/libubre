@@ -104,7 +104,6 @@ void schedule(task_base_ptr p);
 
 template <class Func>
 void yield_and_ret_until(Func &&f) {
-  int cur_id = get_thrd_id();
   runtime_ptr r = runtime::instance();
   bool b = f();
   task_base_ptr pTask;
