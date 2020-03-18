@@ -23,26 +23,16 @@
 #include <vector>
 
 typedef std::string name_t;
-typedef std::string address_t;
 typedef uint64_t height_t;
 
-typedef std::tuple<name_t, address_t, height_t, height_t> row_t;
+typedef std::tuple<name_t, height_t, height_t> row_t;
 
 std::vector<row_t> entry_point_auth() {
 
-  auto admin_addr = {0x19, 0x57, 0x73, 0x3f, 0x7b, 0x52, 0xad, 0x3a, 0x99,
-                     0xc5, 0x56, 0x84, 0xb3, 0x9f, 0x4c, 0x31, 0xe0, 0x5c,
-                     0x35, 0x0c, 0x5d, 0xaa, 0xb0, 0x7e, 0x87, 0x5b};
-
-  std::vector<row_t> auth_table = {
-      std::make_tuple("nr", std::string(admin_addr.begin(), admin_addr.end()),
-                      1ULL, 200000ULL),
-      std::make_tuple("exp", std::string(admin_addr.begin(), admin_addr.end()),
-                      1ULL, 200000ULL),
-      std::make_tuple("lib", std::string(admin_addr.begin(), admin_addr.end()),
-                      1ULL, 200000ULL),
-      std::make_tuple("dip", std::string(admin_addr.begin(), admin_addr.end()),
-                      1ULL, 200000ULL)};
+  std::vector<row_t> auth_table = {std::make_tuple("nr", 1ULL, 200000ULL),
+                                   std::make_tuple("exp", 1ULL, 200000ULL),
+                                   std::make_tuple("lib", 1ULL, 200000ULL),
+                                   std::make_tuple("dip", 1ULL, 200000ULL)};
   return auth_table;
 }
 

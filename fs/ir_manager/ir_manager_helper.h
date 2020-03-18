@@ -28,7 +28,7 @@
 namespace neb {
 namespace fs {
 
-typedef std::tuple<module_t, address_t> auth_key_t;
+typedef module_t auth_key_t;
 typedef std::tuple<start_block_t, end_block_t> auth_val_t;
 
 class ir_manager_helper {

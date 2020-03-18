@@ -99,9 +99,9 @@ void ir_manager_helper::run_auth_table(
   auth_table.clear();
   for (auto &r : rows) {
     assert(std::tuple_size<std::remove_reference<decltype(r)>::type>::value ==
-           4);
-    auth_key_t k = std::make_tuple(std::get<0>(r), to_address(std::get<1>(r)));
-    auth_val_t v = std::make_tuple(std::get<2>(r), std::get<3>(r));
+           3);
+    auth_key_t k = std::get<0>(r);
+    auth_val_t v = std::make_tuple(std::get<1>(r), std::get<2>(r));
     auth_table.insert(std::make_pair(k, v));
   }
   return;
@@ -121,7 +121,7 @@ void ir_manager_helper::load_auth_table(
     payload_bytes =
         rs->get(neb::configuration::instance().nbre_auth_table_name());
   } catch (const std::exception &e) {
-    // LOG(INFO) << "auth table not deploy yet " << e.what();
+    LOG(INFO) << "auth table not deploy yet " << e.what();
     return;
   }
 
@@ -155,9 +155,7 @@ void ir_manager_helper::show_auth_table(
 
   LOG(INFO) << "\nshow auth table";
   for (auto &r : auth_table) {
-    std::string key =
-        boost::str(boost::format("key <%1%, %2%>") % std::get<0>(r.first) %
-                   std::get<1>(r.first).to_base58());
+    std::string key = boost::str(boost::format("key %1%") % r.first);
     std::string val = boost::str(boost::format("val <%1%, %2%>") %
                                  std::get<0>(r.second) % std::get<1>(r.second));
     LOG(INFO) << key << val;
@@ -272,6 +270,7 @@ void ir_manager_helper::deploy_cpp(const std::string &name, uint64_t version,
 
 void ir_manager_helper::compile_payload_code(nbre::NBREIR *nbre_ir,
                                              bytes &payload_bytes) {
+  LOG(INFO) << "compile payload code, name: " << nbre_ir->name();
   if (nbre_ir->ir_type() == ::neb::ir_type::cpp) {
     //! We need compile the code
     std::stringstream ss;
@@ -286,7 +285,6 @@ void ir_manager_helper::compile_payload_code(nbre::NBREIR *nbre_ir,
     payload_bytes = neb::bytes(bytes_long);
     nbre_ir->SerializeToArray((void *)payload_bytes.value(),
                               payload_bytes.size());
-  } else {
   }
 }
 } // namespace fs
