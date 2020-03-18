@@ -44,6 +44,7 @@ public:
         reinterpret_cast<uint64_t>(holder),
         [this, pkg](::ff::net::tcp_connection_base_ptr conn) {
           if (conn) {
+            LOG(INFO) << "ipc server send pkg";
             conn->send(pkg);
           };
         },

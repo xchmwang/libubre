@@ -157,7 +157,7 @@ void client_driver_base::init_timer_thread() {
 void client_driver_base::init_nbre() {
 
   fs::bc_storage_session::instance().init(
-      configuration::instance().neb_db_dir(), fs::storage_open_for_readonly);
+      configuration::instance().neb_db_dir(), fs::storage_open_for_readwrite);
 
   auto *rs = neb::fs::storage_holder::instance().nbre_db_ptr();
   neb::block_height_t height = 1;

@@ -90,7 +90,7 @@ int main(int argc, char *argv[]) {
   get_variables_map(argc, argv);
   if (neb::glog_log_to_stderr) {
     FLAGS_log_dir = neb::configuration::instance().nbre_log_dir();
-    google::InitGoogleLogging("nbre-client");
+    // google::InitGoogleLogging("nbre-client");
     LOG(INFO) << "log dir client " << FLAGS_log_dir;
   }
   LOG(INFO) << "nbre started!";

@@ -30,7 +30,7 @@ int start_nbre_ipc(nbre_params_t params) {
     if (neb::glog_log_to_stderr) {
       FLAGS_log_dir = params.m_nbre_log_dir;
       LOG(INFO) << "log dir server " << FLAGS_log_dir;
-      google::InitGoogleLogging("nbre-server");
+      // google::InitGoogleLogging("nbre-server");
     }
 
     _ipc = std::make_shared<neb::core::nipc_server>();
