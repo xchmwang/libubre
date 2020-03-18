@@ -133,61 +133,25 @@ void ir_manager::parse_irs(
     }
 
     auto h = ele.second->get<p_height>();
+    LOG(INFO) << "h: " << h << ", last_height: " << last_height;
     if (h < last_height + 1) {
+      LOG(INFO) << "block has already been parsed, ignore...";
       continue;
     }
     if (h > last_height + 1) {
-      parse_when_missing_block(last_height + 1, h);
+      // parse_when_missing_block(last_height + 1, h);
+      LOG(INFO) << "missing blocks [" << last_height + 1 << ',' << h << ']';
     }
 
     const auto &txs = ele.second->get<p_ir_transactions>();
-    parse_next_block(h, txs);
+    LOG(INFO) << "parse with height: " << h << ", txs size: " << txs.size();
+    parse_with_height(h, txs);
     last_height = h;
   }
 }
 
-void ir_manager::parse_when_missing_block(block_height_t start_height,
-                                          block_height_t end_height) {
-  std::string ir_tx_type = neb::configuration::instance().ir_tx_payload_type();
-
-  for (block_height_t h = start_height; h < end_height; h++) {
-    auto block = blockchain::load_block_with_height(h);
-    std::vector<corepb::Transaction> txs;
-
-    for (auto &tx : block->transactions()) {
-      auto &data = tx.data();
-      const std::string &type = data.type();
-      if (type == ir_tx_type) {
-        txs.push_back(tx);
-      }
-    }
-    parse_with_height(h, txs);
-  }
-}
-
-void ir_manager::parse_next_block(block_height_t height,
-                                  const std::vector<std::string> &txs_seri) {
-  std::vector<corepb::Transaction> txs;
-  if (txs_seri.empty()) {
-    parse_with_height(height, txs);
-    return;
-  }
-
-  for (auto &tx_seri : txs_seri) {
-    auto tx_bytes = string_to_byte(tx_seri);
-    std::unique_ptr<corepb::Transaction> tx =
-        std::make_unique<corepb::Transaction>();
-    bool ret = tx->ParseFromArray(tx_bytes.value(), tx_bytes.size());
-    if (!ret) {
-      throw std::runtime_error("parse transaction failed");
-    }
-    txs.push_back(*tx);
-  }
-  parse_with_height(height, txs);
-}
-
-void ir_manager::parse_with_height(
-    block_height_t height, const std::vector<corepb::Transaction> &txs) {
+void ir_manager::parse_with_height(block_height_t height,
+                                   const std::vector<std::string> &txs) {
 
   std::string failed_flag =
       neb::configuration::instance().nbre_failed_flag_name();
@@ -196,66 +160,45 @@ void ir_manager::parse_with_height(
     ir_manager_helper::set_failed_flag(m_storage, failed_flag);
     parse_irs_by_height(height, txs);
   }
-  m_storage->put(
-      std::string(neb::configuration::instance().nbre_max_height_name(),
-                  std::allocator<char>()),
-      neb::number_to_byte<neb::bytes>(height));
+  m_storage->put(neb::configuration::instance().nbre_max_height_name(),
+                 neb::number_to_byte<neb::bytes>(height));
   ir_manager_helper::del_failed_flag(m_storage, failed_flag);
 
   neb::rt::dip::dip_handler::instance().start(height);
 }
 
-void ir_manager::parse_irs_by_height(
-    block_height_t height, const std::vector<corepb::Transaction> &txs) {
+void ir_manager::parse_irs_by_height(block_height_t height,
+                                     const std::vector<std::string> &txs) {
 
   for (auto &tx : txs) {
-    auto &data = tx.data();
-    const std::string &type = data.type();
-
-    // ignore transaction other than transaction `protocol`
-    std::string ir_tx_type =
-        neb::configuration::instance().ir_tx_payload_type();
-    if (type != ir_tx_type) {
-      LOG(INFO) << "ignore ir with type: " << type;
-      continue;
-    }
-
-    boost::property_tree::ptree pt;
-    neb::util::json_parser::read_json(data.payload(), pt);
-    neb::bytes payload_bytes =
-        neb::bytes::from_base64(pt.get<std::string>("Data"));
-
+    auto payload_bytes = bytes::from_hex(tx);
     std::unique_ptr<nbre::NBREIR> nbre_ir = std::make_unique<nbre::NBREIR>();
     bool ret =
         nbre_ir->ParseFromArray(payload_bytes.value(), payload_bytes.size());
     if (!ret) {
-      LOG(ERROR) << "parse transaction payload failed " << type;
       throw std::runtime_error("parse transaction payload failed");
     }
 
-    const std::string &name = nbre_ir->name();
+    auto name = nbre_ir->name();
     version_t version = nbre_ir->version();
     if (ir_api::ir_exist(name, version, m_storage)) {
       LOG(INFO) << "ignore ir name: " << name << " with version: " << version;
       continue;
     }
 
-    address_t from = to_address(tx.from());
     // deploy auth table
-    if (neb::configuration::instance().auth_module_name() == name &&
-        neb::configuration::instance().admin_pub_addr() == from) {
+    if (neb::configuration::instance().auth_module_name() == name) {
       ir_manager_helper::compile_payload_code(nbre_ir.get(), payload_bytes);
       ir_manager_helper::deploy_auth_table(m_storage, *nbre_ir.get(),
                                            m_auth_table, payload_bytes);
       continue;
     }
 
-    auto it = m_auth_table.find(std::make_tuple(name, from));
+    auto it = m_auth_table.find(name);
     // ir not in auth table
     if (it == m_auth_table.end()) {
-      LOG(INFO) << boost::str(
-          boost::format("tuple <%1%, %2%> not in auth table") % name %
-          std::to_string(from));
+      LOG(INFO) << boost::str(boost::format("tuple %1% not in auth table") %
+                              name);
       ir_manager_helper::show_auth_table(m_auth_table);
       continue;
     }

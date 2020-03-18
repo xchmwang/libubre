@@ -48,15 +48,10 @@ private:
                        block_height_t height, bool depends,
                        std::vector<nbre::NBREIR> &irs);
 
-  void parse_next_block(block_height_t height,
-                        const std::vector<std::string> &txs_seri);
-  void parse_when_missing_block(block_height_t start_block,
-                                block_height_t end_height);
-
   void parse_irs_by_height(block_height_t height,
-                           const std::vector<corepb::Transaction> &txs);
+                           const std::vector<std::string> &txs);
   void parse_with_height(block_height_t height,
-                         const std::vector<corepb::Transaction> &txs);
+                         const std::vector<std::string> &txs);
 
   void deploy_if_dip(const std::string &name, version_t version,
                      block_height_t available_height);
