@@ -229,9 +229,11 @@ check_install_llvm() {
 
 check_install_boost() {
   cd $CUR_DIR/3rd_party
-  if [ ! -d "boost_1_70_0"  ]; then
+  if [ ! -e "boost_1_70_0.tar.gz"  ]; then
     wget https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.gz
-    #tar -zxvf boost_1_70_0.tar.gz
+  fi
+  if [ ! -d "boost_1_70_0"  ]; then
+    tar -zxvf boost_1_70_0.tar.gz
   fi
   if [ ! -e $CUR_DIR/lib/lib/libboost_system.$DYLIB ]; then
     cd boost_1_70_0
