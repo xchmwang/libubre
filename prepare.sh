@@ -230,7 +230,8 @@ check_install_llvm() {
 check_install_boost() {
   cd $CUR_DIR/3rd_party
   if [ ! -d "boost_1_70_0"  ]; then
-    tar -zxvf boost_1_70_0.tar.gz
+    wget https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.gz
+    #tar -zxvf boost_1_70_0.tar.gz
   fi
   if [ ! -e $CUR_DIR/lib/lib/libboost_system.$DYLIB ]; then
     cd boost_1_70_0
@@ -380,6 +381,8 @@ check_install_sha() {
 check_install_crypto() {
   if [ ! -e $CUR_DIR/lib/lib/libcryptopp.$DYLIB ]; then
     cd $CUR_DIR/3rd_party/cryptopp
+    # Prepare for Crypto++ 8.2 release
+    git checkout 9dcc26c58213abb8351fbb1b2a7a1d2c667366e4
     export CXX=$CUR_DIR/lib_llvm/bin/clang++
     make dynamic -j$PARALLEL && make install PREFIX=$CUR_DIR/lib/
     make clean
