@@ -172,6 +172,9 @@ void ir_manager::parse_irs_by_height(block_height_t height,
 
   for (auto &tx : txs) {
     auto payload_bytes = bytes::from_hex(tx);
+    if (payload_bytes.size() < 5) {
+      continue;
+    }
     std::unique_ptr<nbre::NBREIR> nbre_ir = std::make_unique<nbre::NBREIR>();
     bool ret =
         nbre_ir->ParseFromArray(payload_bytes.value(), payload_bytes.size());
