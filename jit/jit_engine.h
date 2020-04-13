@@ -28,7 +28,7 @@ class jit_engine {
 public:
 
   template <typename RT, typename... ARGS> RT run(ARGS... args) {
-    std::unique_lock<std::mutex> _l(m_mutex);
+    //std::unique_lock<std::mutex> _l(m_mutex);
     using MainFnPtr = RT (*)(ARGS...);
     auto main_func = fromTargetAddress<MainFnPtr>(
         cantFail(m_main_sym->getAddress(), nullptr));

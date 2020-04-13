@@ -40,10 +40,10 @@ public:
         LOG(INFO) << "recv pkg " << pkg_type_id_to_name(T().type_id());
         // No big pressure for NBRE
         m_to_recv_heart_beat_msg = 0;
-        //if (m_pkg_handler_thread->size() > ff::rt::concurrency()) {
-          //LOG(INFO) << "ignore pkg";
-          //return;
-        //}
+        if (m_pkg_handler_thread->size() > ff::rt::concurrency()) {
+          LOG(INFO) << "ignore pkg";
+          return;
+        }
 
         m_pkg_handler_thread->schedule([this, f, pkg]() {
           ff::para<> p;

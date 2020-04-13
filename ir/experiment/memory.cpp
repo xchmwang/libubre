@@ -71,8 +71,11 @@ std::string entry_point_exp(const std::string &msg) {
   std::string val = "yy";
   neb::bytes b_key = neb::string_to_byte(key);
   neb::bytes b_val = neb::string_to_byte(val);
-  ptr->put_bytes(b_key, b_val);
-  ptr->get_bytes(b_key);
+  size_t count = 10000;
+  while (count--) {
+    ptr->put_bytes(b_key, b_val);
+    ptr->get_bytes(b_key);
+  }
   entry_point_lib(msg.c_str());
   return key + msg + val;
 }

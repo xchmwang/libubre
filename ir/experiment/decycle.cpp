@@ -310,12 +310,26 @@ void non_recursive_remove_cycles_based_on_time_sequence(
 extern int entry_point_lib(const char *msg);
 
 std::string entry_point_exp(const std::string &msg) {
+  std::cout << "in func entry_point_exp, msg: " << msg << std::endl;
   neb::rt::transaction_graph tg;
-  tg.add_edge(neb::to_address("a"), neb::to_address("a"), 1, 1);
-  tg.add_edge(neb::to_address("a"), neb::to_address("b"), 2, 2);
-  tg.add_edge(neb::to_address("b"), neb::to_address("c"), 3, 3);
-  tg.add_edge(neb::to_address("c"), neb::to_address("a"), 4, 4);
+  char cc = 'r';
+  int32_t n = 1;
+  int32_t tmp = cc - 'a' + 1;
+
+  for (char s = 'a'; s <= cc; s++) {
+    for (char t = 'a'; t <= cc; t++) {
+      int32_t s_ch = s - 'a' + 1;
+      int32_t t_ch = t - 'a' + 1;
+      for (int32_t i = 0; i < n; i++) {
+        tg.add_edge(neb::to_address(std::string(1, s)),
+                    neb::to_address(std::string(1, t)), s_ch + tmp * t_ch + 1,
+                    s_ch + tmp * t_ch + 1);
+      }
+    }
+  }
+  std::cout << "to run non-recursive decycle algo" << std::endl;
   non_recursive_remove_cycles_based_on_time_sequence(tg.internal_graph());
+  std::cout << "algo finished" << std::endl;
   entry_point_lib(msg.c_str());
   return msg;
 }

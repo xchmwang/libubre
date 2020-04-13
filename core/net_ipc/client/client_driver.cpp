@@ -393,10 +393,15 @@ void client_driver::add_handlers() {
 
   m_client->add_handler<nbre_experiment_req>(
       [this](std::shared_ptr<nbre_experiment_req> req) {
+
+          uint64_t version = req->get<p_version>();
+          auto msg = req->get<p_msg>();
+
+      ff::para<> p;
+      p([version, msg](){
         try {
 
           std::string name = "exp";
-          uint64_t version = req->get<p_version>();
           auto *rs = neb::fs::storage_holder::instance().nbre_db_ptr();
           std::stringstream ss;
           ss << name << version;
@@ -417,18 +422,20 @@ void client_driver::add_handlers() {
           }
           std::cout << "irs size: " << irs.size() << std::endl;
           auto &jd = jit_driver::instance();
-          auto msg = req->get<p_msg>();
 
           LOG(INFO) << "bytecode run start";
           auto ret = jd.run<std::string>(ir_key, irs, func_name, msg);
           LOG(INFO) << "bytecode run end";
-          auto ack = new_ack_pkg<nbre_experiment_ack>(req);
-          ack->set<p_msg>(ret);
-          m_ipc_conn->send(ack);
         } catch (const std::exception &e) {
           LOG(ERROR) << "got exception " << typeid(e).name()
                      << " with what: " << e.what();
         }
+
+          });
+
+          auto ack = new_ack_pkg<nbre_experiment_ack>(req);
+          ack->set<p_msg>(msg);
+          m_ipc_conn->send(ack);
       });
 
   m_client->add_handler<nbre_lib_req>(
