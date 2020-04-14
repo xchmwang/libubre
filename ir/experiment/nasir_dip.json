@@ -9,6 +9,12 @@
       "version_major": 0,
       "version_minor": 0,
       "version_patch": 1
+    },
+    {
+      "name": "exp",
+      "version_major": 1,
+      "version_minor": 6,
+      "version_patch": 0
     }
   ],
   "available_height": 2,
