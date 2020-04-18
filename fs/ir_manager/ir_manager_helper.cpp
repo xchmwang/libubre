@@ -22,6 +22,7 @@
 #include "fs/ir_manager/api/ir_api.h"
 #include "jit/cpp_ir.h"
 #include "jit/jit_driver.h"
+#include "common/version.h"
 #include <boost/foreach.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
@@ -256,7 +257,12 @@ void ir_manager_helper::deploy_ir(const std::string &name, uint64_t version,
   std::stringstream ss;
   ss << name << version;
   rs->put(ss.str(), payload_bytes);
-  LOG(INFO) << "deploy " << name << " version " << version << " successfully!";
+
+  neb::version v(version);
+  std::stringstream ssv;
+  ssv << v.major_version() << '.' << v.minor_version() << '.' << v.patch_version();
+
+  LOG(INFO) << "deploy " << name << " version " << ssv.str() << " successfully!";
 }
 
 void ir_manager_helper::deploy_cpp(const std::string &name, uint64_t version,
